@@ -1,0 +1,9 @@
+{
+  "workbench.iconTheme": "symbols",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Min Dark",
+  "[typescript]": {},
+  "workbench.editor.empty.hint": "hidden"
+}
