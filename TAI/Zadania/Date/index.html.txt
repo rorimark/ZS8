@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date - Zadanie 1</title>
+  </head>
+  <body>
+    <h3>Formularze do wprowadzania dat i obiekt Date w obliczeniach</h3>
+    <h5>Podaj datę urodzenia:</h5>
+    <input type="date" id="data-urodzenia" />
+    <button onclick="oblicz()">Podaj</button>
+    <div id="wynik"></div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
