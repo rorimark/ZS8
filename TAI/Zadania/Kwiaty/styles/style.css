@@ -1,0 +1,53 @@
+* {
+  font-size: 20px;
+}
+
+body {
+  background-image: url(../images/kwiaty2.png);
+}
+
+.dostawa {
+  width: 30%;
+  background-color: rgb(207, 221, 216);
+  border-style: double;
+  padding: 2%;
+}
+
+.bukiet {
+  width: 30%;
+  background-color: rgb(207, 221, 216);
+  border-style: double;
+  padding: 2%;
+}
+
+.dwa {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.szerokosc {
+  width: 60%;
+}
+
+header {
+  height: 170px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  height: 200px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.srodek {
+  text-align: center;
+}
+
+.px40 {
+  font-size: 40px;
+}

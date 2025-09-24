@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dostawa</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header>Dostawa kwiatów</header>
+    <main class="dwa">
+      <section class="bukiet">
+        <form action="" method="post">
+          <fieldset>
+            <br />
+            <legend>Wybierz bukiet</legend>
+            <label for="kwiaty" style="width: 40%">Wybierz kwiaty:</label>
+            <select id="kwiaty" class="szerokosc">
+              <option value="r">Róże</option>
+              <option value="t">Tulipany</option>
+              <option value="s">Storczyki</option>
+              <option value="k">Kalie</option>
+              <option value="l">Lilie</option>
+              <option value="a">Anturium</option>
+            </select>
+            <br /><br />
+            <label for="ile-sztuk">Podaj ile sztuk:</label>
+            <input type="number" id="ile-sztuk" min="1" class="szerokosc" />
+            <br /><br />
+            <label>Przybranie (5zł):</label>
+            <input type="radio" name="przybranie" id="przyb-tak" /> Tak
+            <input type="radio" name="przybranie" id="przyb-nie" /> Nie
+            <br /><br /><br />
+            <div class="srodek">
+              <input
+                type="button"
+                onclick="checkFlowers()"
+                value="Sprawdź cenę"
+              />
+              <br /><br />
+              <p>Koszt bukietu wynosi <span id="wynik"></span>zł.</p>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+      <section class="dostawa">
+        <form>
+          <fieldset>
+            <legend>Sprawdź koszt dostawy</legend>
+            <br />
+            Dzień tygodnia:
+            <select id="dzien">
+              <option value="1">Poniedziałek</option>
+              <option value="2">Wtorek</option>
+              <option value="3">Środa</option>
+              <option value="4">Czwartek</option>
+              <option value="5">Piątek</option>
+              <option value="6">Sobota</option>
+              <option value="7">Niedziela</option>
+            </select>
+            <br /><br />
+            Pora dostawy:
+            <input type="radio" name="time" id="time1" /> 8:00-16:00
+            <input type="radio" name="time" id="time2" /> 16:00-22:00
+            <br /><br /><br />
+            <div class="srodek">
+              <input
+                type="button"
+                value="Sprawdź cenę"
+                onclick="checkDates()"
+              />
+              <br /><br />
+              Koszt dostawy wynosi <span id="koszt-dostawy"></span>zł.
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer class="srodek">
+      <br />
+      <input
+        type="button"
+        value="Łączna cena"
+        onclick="sumAmount()"
+        style="
+          background-color: rgb(207, 221, 216);
+          border-radius: 4%;
+          padding: 5px;
+        "
+      />
+      <br />
+      <p class="px40">
+        Łączna cena za bukiet z dowozem wynosi <span id="to-pay"></span> zł.
+      </p>
+    </footer>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
