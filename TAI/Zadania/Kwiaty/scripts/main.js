@@ -28,7 +28,7 @@ function checkFlowers() {
   }
   addYes.checked ? (cost += 5) : (cost += 0);
 
-  wynik.innerHTML = cost;
+  result.innerHTML = cost;
   return cost;
 }
 
