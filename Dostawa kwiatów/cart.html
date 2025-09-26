@@ -3,7 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flower delivery website made by Mark Storchovyi 4AT"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
     <title>Flower Delivery - CART</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html"
+          ><img id="logo" src="./images/logo.png" alt="Logo"
+        /></a>
+      </div>
+
+      <nav>
+        <ul class="tabs">
+          <li class="tab-home"><a href="./index.html">HOME</a></li>
+          <li class="tab-occasions"><a href="#">OCCASIONS</a></li>
+          <li class="tab-popular"><a href="#">MOST POPULAR</a></li>
+          <li class="tab-autumn"><a href="#">AUTUMN</a></li>
+        </ul>
+      </nav>
+
+      <a href="#"
+        ><div class="cart">
+          <img src="./images/cart.svg" alt="Shopping cart" srcset="" />
+          <span class="cart-count">0</span>
+        </div></a
+      >
+    </header>
+
+    <div class="cart-container">
+      <div class="cart-items">
+        <div class="items"></div>
+      </div>
+      <div class="cart-summary">
+        <h3>Summary</h3>
+        <p>Items: <span class="items-qty">0</span></p>
+        <p>Subtotal: <span class="subtotal">0 PLN</span></p>
+
+        <div class="delivery-options">
+          <label for="delivery-date">Delivery date:</label>
+          <input type="date" id="delivery-date" />
+          <label for="delivery-time">Delivery time:</label>
+          <input type="time" id="delivery-time" />
+        </div>
+
+        <p>Delivery: <span class="delivery">20 PLN</span></p>
+
+        <div class="cart-summary-total">
+          <p>
+            <strong>Total: <span class="total">0 PLN</span></strong>
+          </p>
+          <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>© Mark Storchovyi</footer>
+
+    <script src="./scripts/cart.js"></script>
+  </body>
 </html>

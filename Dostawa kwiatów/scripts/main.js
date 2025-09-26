@@ -75,7 +75,7 @@ const flowers = [
   },
   {
     name: "Z nutą goździka",
-    price: "129,00 PLN",
+    price: "129,90 PLN",
     img: "./images/flowers/z-nuta-gozdzika.webp",
   },
 ];
@@ -104,14 +104,16 @@ flowers.forEach((flower, index) => {
 });
 
 function addToCart(flower) {
-  let cart = JSON.parse(localStorage.getItem("cart") || []);
+  let cart = JSON.parse(localStorage.getItem("cart") || "[]");
   const existing = cart.find((item) => item.name === flower.name);
 
   if (existing) {
     existing.quantity += 1;
+    console.log("U pushed existing 1 item");
   } else {
     flower.quantity = 1;
     cart.push(flower);
+    console.log("U pushed  1 item");
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -130,5 +132,3 @@ document.querySelectorAll(".card-add-item").forEach((btn) => {
     addToCart(flower);
   });
 });
-
-// TODO Добавсить логику обновления счетчика товаров в корзине, сделать страницу с корзиной, сделать футер
