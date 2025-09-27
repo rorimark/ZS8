@@ -81,10 +81,11 @@ const flowers = [
   },
 ];
 
-flowers.forEach((flower, index) => {
+updateCartCount();
+
+flowers.forEach((flower) => {
   const card = document.createElement("div");
   card.classList.add("card");
-  //   card.id = `card${index + 1}`;
 
   card.innerHTML = `
     <div class="card-photo">
@@ -113,19 +114,15 @@ function updateCartCount() {
   cartCount.textContent = itemsQtyCount(cart);
 }
 
-updateCartCount();
-
 function addToCart(flower) {
   let cart = JSON.parse(localStorage.getItem("cart") || "[]");
   const existing = cart.find((item) => item.name === flower.name);
 
   if (existing) {
     existing.quantity += 1;
-    console.log("U pushed existing 1 item");
   } else {
     flower.quantity = 1;
     cart.push(flower);
-    console.log("U pushed  1 item");
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));

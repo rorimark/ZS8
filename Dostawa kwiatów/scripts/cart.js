@@ -60,9 +60,6 @@ function deliveryCount() {
 
   if (!timeValue || !dateValue) return 0;
 
-  console.log(dateValue);
-  console.log(timeValue);
-
   const date = new Date(dateValue);
   const dateDay = +date.getDay();
   const [hours, minutes] = timeValue.split(":").map(Number);
