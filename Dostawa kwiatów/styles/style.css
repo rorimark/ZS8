@@ -178,34 +178,6 @@ footer {
   height: 100px;
 }
 
-/* .cart-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin: 50px;
-}
-
-.cart-items {
-  display: flex;
-  width: 800px;
-  height: 800px;
-  background-color: #e9e9e9;
-  border-radius: 50px;
-  box-shadow: 0px 0px 15px lightgrey;
-}
-
-.cart-sum {
-  display: flex;
-  justify-content: space-between;
-  width: 500px;
-  height: 800px;
-  background-color: #e9e9e9;
-  border-radius: 50px;
-  box-shadow: 0px 0px 15px rgb(211, 211, 211);
-}
-
-*/
 .cart-container {
   display: flex;
   gap: 20px;
@@ -220,7 +192,6 @@ footer {
   overflow-y: auto;
 }
 
-/* Одна карточка */
 .cart-item {
   display: flex;
   align-items: center;
@@ -273,7 +244,6 @@ footer {
   font-size: 18px;
 }
 
-/* Правая часть — итог */
 .cart-summary {
   display: flex;
   flex: 1;

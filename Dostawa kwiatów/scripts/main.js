@@ -1,6 +1,7 @@
 "use strict";
 
 const cardsContainer = document.getElementById("cardsContainer");
+const cartCount = document.querySelector(".cart-count");
 
 const flowers = [
   {
@@ -19,9 +20,9 @@ const flowers = [
     img: "./images/flowers/bukiet-delikatnosc.webp",
   },
   {
-    name: "Bukiet herbacianych róż",
-    price: "125,00 PLN",
-    img: "./images/flowers/bukiet-herbacianych-roz.webp",
+    name: "Bukiet Czar Kolorów",
+    price: "119,00 PLN",
+    img: "./images/flowers/bukiet-czar-kolorow.webp",
   },
   {
     name: "Elegancja natury",
@@ -103,6 +104,17 @@ flowers.forEach((flower, index) => {
   cardsContainer.appendChild(card);
 });
 
+function itemsQtyCount(cart) {
+  return cart.reduce((sum, item) => sum + item.quantity, 0);
+}
+
+function updateCartCount() {
+  let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  cartCount.textContent = itemsQtyCount(cart);
+}
+
+updateCartCount();
+
 function addToCart(flower) {
   let cart = JSON.parse(localStorage.getItem("cart") || "[]");
   const existing = cart.find((item) => item.name === flower.name);
@@ -117,6 +129,7 @@ function addToCart(flower) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
 }
 
 document.querySelectorAll(".card-add-item").forEach((btn) => {
@@ -132,3 +145,5 @@ document.querySelectorAll(".card-add-item").forEach((btn) => {
     addToCart(flower);
   });
 });
+
+// TODO: сделать открывающиеся карточки товаров

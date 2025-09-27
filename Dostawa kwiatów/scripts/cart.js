@@ -3,8 +3,11 @@
 const items = document.querySelector(".items");
 const itemsQty = document.querySelector(".items-qty");
 const subtotal = document.querySelector(".subtotal");
+const deliveryTime = document.getElementById("delivery-time");
+const deliveryDate = document.getElementById("delivery-date");
 const delivery = document.querySelector(".delivery");
 const total = document.querySelector(".total");
+const cartCount = document.querySelector(".cart-count");
 
 let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
@@ -51,9 +54,43 @@ function subtotalCount() {
     .replace(".", ",");
 }
 
+function deliveryCount() {
+  const timeValue = deliveryTime.value;
+  const dateValue = deliveryDate.value;
+
+  if (!timeValue || !dateValue) return 0;
+
+  console.log(dateValue);
+  console.log(timeValue);
+
+  const date = new Date(dateValue);
+  const dateDay = +date.getDay();
+  const [hours, minutes] = timeValue.split(":").map(Number);
+
+  let price = 0;
+
+  if (dateDay === 0 || dateDay === 6) {
+    price = 10;
+  }
+  if (hours >= 9 && hours < 19) {
+    price += 10;
+  } else {
+    price += 20;
+  }
+
+  return price;
+}
+
+function totalCount() {
+  return (parseFloat(subtotalCount()) + parseFloat(deliveryCount())).toFixed(2);
+}
+
 function updateSummary() {
   itemsQty.innerHTML = itemsQtyCount();
+  cartCount.innerHTML = itemsQtyCount();
   subtotal.innerHTML = `${subtotalCount()} PLN`;
+  delivery.innerHTML = `${deliveryCount()} PLN`;
+  total.innerHTML = `${totalCount()} PLN`;
 }
 
 function changeQty(index, delta) {
@@ -93,6 +130,7 @@ function attachEventListeners() {
       removeItem(index);
     });
   });
-}
 
-// TODO: Добавить логику для счетчика товаров в корзине, для посчета цены доставки, для выбора даты и времени доставки а также для подсчета итоговой цены
+  deliveryTime.addEventListener("input", updateSummary);
+  deliveryDate.addEventListener("input", updateSummary);
+}
