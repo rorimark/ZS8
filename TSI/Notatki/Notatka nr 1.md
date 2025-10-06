@@ -140,10 +140,21 @@ Atrybut `name` elementu `<map>` łączy się z `usemap` w `<img>`.
 - `coords` – współrzędne obszaru (rozmiar, kształt i położenie).  
 
 **Przykłady:**
+
+`rect` - (prostokąt) Wartość to `x1,y1,x2,y2`, czyli współrzędne lewego górnego i prawego dolnego rogu prostokąta.
+
 ```html
 <area shape="rect" coords="0,0,253,27" href="#" alt="tekst alternatywny">
+```
+
+`circle` - (okrąg) Wartość to `x,y,radius`, czyli współrzędne środka okręgu oraz jego promień.
+
+```html
 <area shape="circle" coords="130,136,60" href="#" alt="tekst alternatywny">
 ```
+
+`poly` - (wielokąt) Wartość to `x1,y1,x2,y2,...,xn,yn`, czyli współrzędne kolejnych wierzchołków wielokąta.
+Jeśli pierwszy i ostatni punkt nie są takie same, przeglądarka automatycznie zamknie kształt, łącząc je.
 
 ```html
 <img src="auto.png" alt="Samochód" usemap="#samochod-mapa" />
