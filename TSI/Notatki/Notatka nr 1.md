@@ -92,7 +92,7 @@ Poprawne zagnieżdżenie:
 - `colspan` i `rowspan` – łączenie kolumn/wierszy.  
 - `<caption>` – tytuł tabeli.  
 - Bloki logiczne: `<thead>`, `<tbody>`, `<tfoot>`.  
-- Atrybut `cellspacing` – odstęp między komórkami.  
+- `cellspacing` – odstęp między komórkami.  
 - `border` – grubość obramowania.  
 - `bgcolor` – kolor tła tabeli.  
 
