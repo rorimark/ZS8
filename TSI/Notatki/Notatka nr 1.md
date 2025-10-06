@@ -206,5 +206,6 @@ Przykład:
 
 Zalecane: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
 
-<img width="408" height="466" alt="html-sementics-layout" src="https://github.com/user-attachments/assets/9e921780-e938-43dc-a535-63428a689238" />
+![document-outline-example-1](https://github.com/user-attachments/assets/855a41c0-0e08-4f29-b8f4-aceaf6fa154d)
+
 
