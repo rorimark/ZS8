@@ -1,10 +1,17 @@
-# Notatka - Analiza plików HTML (format Markdown)
+# Notatka nr 1
 
-**Kompletna, przygotowana na kartkówkę** - wyjaśnienia, przykłady i poprawki.
+## Spis treści
+1. [Struktura dokumentu HTML](#struktura-dokumentu-html)
+2. [Tekst i semantyka](#tekst-i-semantyka)
+3. [Listy](#listy)
+4. [Tabele](#tabele)
+5. [Obrazy i mapy obrazkowe](#obrazy-i-mapy-obrazkowe)
+6. [Elementy przestarzałe](#elementy-przestarzałe)
+7. [Semantyczne tagi HTML5](#semantyczne-tagi-html5)
 
 ---
 
-# Struktura dokumentu HTML
+## Struktura dokumentu HTML
 
 ```html
 <!DOCTYPE html>
@@ -20,46 +27,47 @@
 </html>
 ```
 
-- `<!DOCTYPE html>` - deklaruje HTML5.
-- `<html lang="pl">` - język dokumentu (ważne dla SEO i czytników ekranowych).
-- `<meta charset="utf-8">` - kodowanie znaków.
-- `<meta name="viewport">` - responsywność na urządzeniach mobilnych.
-- `<title>` - tytuł zakładki przeglądarki.
+- `<!DOCTYPE html>` – deklaruje HTML5.  
+- `<html lang="pl">` – język dokumentu.  
+- `<meta charset="utf-8">` – kodowanie znaków.  
+- `<meta name="viewport">` – responsywność na urządzeniach mobilnych.  
+- `<title>` – tytuł zakładki przeglądarki.  
 
 ---
 
-# Tekst i semantyka
+## Tekst i semantyka
 
-- Nagłówki: `<h1>` ... `<h6>` - używaj hierarchicznie (najważniejszy `<h1>`).
-- Akapit: `<p>...</p>`.
-- Złamanie linii: `<br/>` - używać oszczędnie.
-- Pogrubienie/pochylenie:
-  - Semantyczne: `<strong>` (ważne), `<em>` (emfaza).
-  - Formatowanie bez semantyki: `<b>`, `<i>` - istnieją, ale lepiej używać semantycznych wersji.
-- Indeksy: `<sup>` (górny indeks), `<sub>` (dolny indeks).
-- Dekoracje: `<u>` (podkreślenie), `<s>`/`<del>` (przekreślenie).
+- Nagłówki: `<h1>` ... `<h6>` – używane hierarchicznie (najważniejszy `<h1>`).  
+- Akapit: `<p>...</p>`.  
+- Złamanie linii: `<br/>`.  
+- Podział tematyczny: `<hr/>`.  
 
-**Przykład:**
+**Pogrubienie/pochylenie:**  
+- Semantyczne: `<strong>` (ważne), `<em>` (emfaza).  
+- Formatowanie bez semantyki: `<b>`, `<i>`, `<s>`, `<u>`.  
+
+**Indeksy:** `<sup>` (górny indeks), `<sub>` (dolny indeks).
+
+Przykład:
 
 ```html
-<p>
-  <strong>E = MC<sup>2</sup></strong>
-</p>
+<p><strong>E = MC<sup>2</sup></strong></p>
 <p><em>To jest kursywa</em></p>
+<p><u>To jest podkreślenie</u></p>
+<p><s>To jest przekreślenie</s></p>
 ```
 
 ---
 
-# Listy
+## Listy
 
-- Nieuporządkowana: `<ul>` + `<li>`.
-- Numerowana: `<ol>` + `<li>`.
-  - Atrybut `type` (`1`, `a`, `A`, `i`, `I`) - styl numeracji.
-  - `start` - wartość startowa.
-  - `reversed` - odliczanie w dół.
-- Zagnieżdżanie: wstawiaj listę wewnątrz `<li>`.
+- Nieuporządkowana: `<ul>` + `<li>`.  
+- Numerowana: `<ol>` + `<li>`.  
+  - Atrybut `type` (1, a, A, i, I) – styl numeracji.  
+  - `start` – wartość startowa.  
+  - `reversed` – odliczanie w dół.  
 
-**Poprawne zagnieżdżenie:**
+Poprawne zagnieżdżenie:
 
 ```html
 <ol>
@@ -76,235 +84,109 @@
 
 ---
 
-# Tabele
+## Tabele
 
-- Struktura: `<table>`, wiersze: `<tr>`, komórki: `<td>` (dane) i `<th>` (nagłówek).
-- `colspan` i `rowspan` - łączenie kolumn/wierszy.
-- Używaj `<caption>` (tytuł) oraz logicznych bloków: `<thead>`, `<tbody>`, `<tfoot>`.
-- Dla dostępności stosuj `<th scope="col">` lub `scope="row"`.
+- Struktura: `<table>`, wiersze: `<tr>`, komórki: `<td>` i `<th>`.  
+- `colspan` i `rowspan` – łączenie kolumn/wierszy.  
+- `<caption>` – tytuł tabeli.  
+- Bloki logiczne: `<thead>`, `<tbody>`, `<tfoot>`.  
+- Atrybut `cellspacing` – odstęp między komórkami.  
+- `border` – grubość obramowania.  
+- `bgcolor` – kolor tła tabeli.  
 
-**Przykład:**
+Przykład:
 
 ```html
-<table>
-  <caption>
-    Plan zajęć
-  </caption>
-  <thead>
-    <tr>
-      <th>Godz</th>
-      <th>Poniedziałek</th>
-      <th>Wtorek</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>18:00</td>
-      <td>Karate</td>
-      <td>Pianino</td>
-    </tr>
-    <tr>
-      <td>20:00</td>
-      <td colspan="2">Basen i Sauna</td>
-    </tr>
-  </tbody>
+<table border="1" cellspacing="0">
+  <caption>Plan zajęć</caption>
+  <tr>
+    <th>Godz</th>
+    <th>Poniedziałek</th>
+    <th>Wtorek</th>
+  </tr>
+  <tr bgcolor="green">
+    <td>18:00</td>
+    <td>Karate</td>
+    <td>Pianino</td>
+  </tr>
+  <tr>
+    <td bgcolor="blue"><font color="white">20:00</font></td>
+    <td colspan="2">Basen i Sauna</td>
+  </tr>
 </table>
 ```
 
 ---
 
-# Obrazy i mapy obrazkowe
-
-- `<img src="..." alt="opis" width="..." height="...">`
-  - `alt` - obowiązkowy dla dostępności.
-  - Unikaj przestarzałych `hspace`, `vspace`, `align` - stosuj CSS (`margin`, `float`).
-- Mapy obrazkowe:
+## Obrazy i mapy obrazkowe
 
 ```html
-<img src="auto.png" usemap="#car-map" alt="Samochód" />
-<map name="car-map">
-  <area
-    shape="rect"
-    coords="187,213,322,395"
-    href="https://example.com"
-    alt="ZS8"
-  />
-  <area
-    shape="circle"
-    coords="370,427,35"
-    href="https://example.com/301"
-    alt="Harmonogram"
-  />
+<img src="..." alt="opis" width="..." height="...">
+```
+
+- `alt` – opis alternatywny (dla czytników ekranowych i gdy obraz się nie załaduje).  
+- `src` – ścieżka do obrazu (np. `./images/obraz.png` lub URL).  
+
+### Mapy obrazkowe
+
+Znacznik `<map>` definiuje **mapę obrazka (image map)** – obraz z klikalnymi obszarami.  
+Atrybut `name` elementu `<map>` łączy się z `usemap` w `<img>`.  
+
+**Atrybuty `<area>`:**  
+- `alt` – tekst alternatywny.  
+- `coords` – współrzędne obszaru (rozmiar, kształt i położenie).  
+
+**Przykłady:**
+```html
+<area shape="rect" coords="0,0,253,27" href="#" alt="tekst alternatywny">
+<area shape="circle" coords="130,136,60" href="#" alt="tekst alternatywny">
+```
+
+```html
+<img src="auto.png" alt="Samochód" usemap="#samochod-mapa" />
+<map name="samochod-mapa">
+  <area shape="rect" coords="187,213,322,395" href="https://www.zs8.wroc.pl/" alt="ZS8"/>
+  <area shape="poly" coords="326,210,498,106,675,210" href="http://planlekcji.zs8.wroc.pl/" alt="Plan lekcji"/>
+  <area shape="circle" coords="370,427,35" href="https://www.zs8.wroc.pl/301-2/" alt="Harmonogram roku szkolnego"/>
 </map>
 ```
 
 ---
 
-# Elementy przestarzałe (co znalazłeś w plikach) i ich zamienniki
+## Elementy przestarzałe
 
-**Przestarzałe:** `<font>`, `bgcolor`, `align`, `border` (w tabelach), `hspace`, `<marquee>`.  
-**Zamień na CSS.**
+Przestarzałe: `<font>`, `bgcolor`, `align`, `border`, `hspace`, `vspace`, `<marquee>`.
 
-Przykład - zamiast:
+Przykład:
 
 ```html
-<p align="center">
-  <font color="red"><b>Tekst</b></font>
-</p>
+<font face="Courier New"><p align="right">My first paragraph.</p></font>
+
+<table border="2px" height="300" width="600">
+  <tr align="left">
+    <td bgcolor="red" rowspan="2">Maślanka</td>
+    <td bgcolor="green">Maślanka</td>
+    <td bgcolor="yellow">Maślanka</td>
+    <td bgcolor="red">Maślanka</td>
+  </tr>
+  <tr align="center">
+    <td bgcolor="green">Maślanka</td>
+    <td bgcolor="yellow" rowspan="2" colspan="2">Maślanka</td>
+  </tr>
+  <tr align="right">
+    <td bgcolor="green">Maślanka</td>
+    <td bgcolor="red">Maślanka</td>
+  </tr>
+</table>
 ```
 
-Użyj:
-
+### Przykład animacji `<marquee>`
 ```html
-<p class="center-red"><strong>Tekst</strong></p>
-
-<style>
-  .center-red {
-    text-align: center;
-    color: red;
-    font-family: Arial, sans-serif;
-    font-weight: 700;
-  }
-</style>
-```
-
-**Dlaczego?**
-
-- Separacja treści (HTML) od wyglądu (CSS).
-- Lepsza dostępność i utrzymanie kodu.
-
----
-
-# Animacje - zamiast `<marquee>`
-
-- `<marquee>` jest przestarzałe. Użyj CSS `@keyframes` i `animation`.
-
-**Przykład prostego ruchu:**
-
-```html
-<div class="ticker">TEKST</div>
-
-<style>
-  @keyframes pendulum {
-    0% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(200px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  .ticker {
-    display: inline-block;
-    animation: pendulum 2s infinite alternate;
-  }
-</style>
+<marquee behavior="alternate" direction="right" loop="2" scrollamount="100">TEKST</marquee>
 ```
 
 ---
 
-# Semantyczne tagi HTML5 (ułatwiają strukturę i SEO)
+## Semantyczne tagi HTML5
 
-- Zamiast wielu `<div>` używaj: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
-
----
-
-# Dostępność (a11y) - najważniejsze zasady
-
-- Każdy `<img>` ma `alt`.
-- Tabele z nagłówkami (`<th>` + `scope`).
-- Linki opisowe (nie „kliknij tutaj”).
-- Utrzymuj logiczną kolejność nagłówków (`h1` → `h2` → `h3`).
-- Unikaj migających animacji lub daj opcję ich zatrzymania.
-- Dbaj o kontrast kolorów tekstu/tła.
-
----
-
-# Najczęstsze błędy do zapamiętania
-
-1. Użycie `<font>` zamiast CSS.
-2. Inline `align`, `bgcolor`, `border` zamiast stylów.
-3. Brak `alt` w obrazkach.
-4. Niepoprawne zagnieżdżenie list (np. `<ul>` bez `<li>`).
-5. Używanie `<marquee>` zamiast CSS.
-6. Brak semantycznych nagłówków i elementów HTML5.
-
----
-
-# Krótkie zasady do kartkówki (mnemotechnika)
-
-- **HTML = struktura**, **CSS = wygląd**, **JS = zachowanie**.
-- **Semantyka ponad wyglądem** (używaj `strong`, `em`, `header`, `nav` itd.).
-- **Przestarzałe → zamień na CSS** (`font`, `bgcolor`, `align`, `marquee`).
-
----
-
-# Praktyczne zadania (ćwiczenia) - z odpowiedziami
-
-1. **Co robi `colspan="2"` w `<td>`?**
-
-   > Łączy komórkę tak, aby zajmowała dwie kolumny (poziomo).
-
-2. **Jak zastąpić `<font face="Verdana" size="4">Tekst</font>`?**
-
-   ```html
-   <p class="verdana">Tekst</p>
-   <style>
-     .verdana {
-       font-family: Verdana, sans-serif;
-       font-size: 1.25rem;
-     }
-   </style>
-   ```
-
-3. **Dlaczego `alt` jest ważne?**
-
-   > Bo opisuje obraz dla czytników ekranowych i gdy obraz nie załaduje się.
-
-4. **Co to jest `usemap` w `<img>`?**
-   > Łączy obraz z mapą obrazkową (`<map name="...">`), która definiuje klikane obszary.
-
----
-
-# Gotowy poprawiony fragment (przykład modernizacji)
-
-Oryginał:
-
-```html
-<font face="Courier New">adasdfasdfasuii</font>
-<p align="right">My first paragraph.</p>
-```
-
-Poprawione:
-
-```html
-<p style="font-family: 'Courier New', monospace;">adasdfasdfasuii</p>
-<p class="text-right">My first paragraph.</p>
-
-<style>
-  .text-right {
-    text-align: right;
-  }
-</style>
-```
-
----
-
-# Szybka checklista przed sprawdzianem
-
-- [ ] Wiesz co robi `<!DOCTYPE html>`?
-- [ ] Rozróżniasz `<b>` vs `<strong>` i `<i>` vs `<em>`?
-- [ ] Potrafisz użyć `colspan` / `rowspan`?
-- [ ] Wiesz, dlaczego unikać `<font>` i używać CSS?
-- [ ] Znasz podstawy dostępności (`alt`, `th scope`)?
-- [ ] Potrafisz zamienić `<marquee>` na animację CSS?
-- [ ] Umiesz zagnieździć listę poprawnie?
-
----
-
-# Co mogę zrobić dalej
-
-- wygenerować tę notatkę jako plik `.md` (zapisane poniżej),
-- albo przekształcić jedną z Twoich stron na **poprawny HTML5 + CSS** (zachowując treść).
+Zalecane: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
