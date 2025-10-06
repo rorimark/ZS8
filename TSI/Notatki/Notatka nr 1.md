@@ -1,4 +1,4 @@
-# Notatka nr 1
+# Notatka nr 1 - Witryny
 
 ## Spis treści
 1. [Struktura dokumentu HTML](#struktura-dokumentu-html)
