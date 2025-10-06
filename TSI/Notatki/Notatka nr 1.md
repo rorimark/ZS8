@@ -56,6 +56,7 @@ Przykład:
 <p><u>To jest podkreślenie</u></p>
 <p><s>To jest przekreślenie</s></p>
 ```
+<img width="137" height="122" alt="image" src="https://github.com/user-attachments/assets/11d453ad-3340-4bde-8e76-f4dccabea2d4" />
 
 ---
 
@@ -81,6 +82,7 @@ Poprawne zagnieżdżenie:
   <li>Wyjścia</li>
 </ol>
 ```
+<img width="133" height="70" alt="image" src="https://github.com/user-attachments/assets/1264232c-3f0c-4fbc-ab1d-743a5007d426" />
 
 ---
 
@@ -115,6 +117,7 @@ Przykład:
   </tr>
 </table>
 ```
+<img width="196" height="87" alt="image" src="https://github.com/user-attachments/assets/3fae0a14-8044-46a4-a486-d07812c2f739" />
 
 ---
 
@@ -179,6 +182,7 @@ Przykład:
   </tr>
 </table>
 ```
+<img width="1919" height="1036" alt="image" src="https://github.com/user-attachments/assets/d1a2511c-1adb-41e2-959d-26f34c856faa" />
 
 ### Przykład animacji `<marquee>`
 ```html
@@ -190,3 +194,5 @@ Przykład:
 ## Semantyczne tagi HTML5
 
 Zalecane: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
+<img width="408" height="466" alt="html-sementics-layout" src="https://github.com/user-attachments/assets/9e921780-e938-43dc-a535-63428a689238" />
+
