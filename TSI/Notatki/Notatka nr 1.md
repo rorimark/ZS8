@@ -194,5 +194,6 @@ Przykład:
 ## Semantyczne tagi HTML5
 
 Zalecane: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
+
 <img width="408" height="466" alt="html-sementics-layout" src="https://github.com/user-attachments/assets/9e921780-e938-43dc-a535-63428a689238" />
 
