@@ -8,24 +8,25 @@ function checkFlowers() {
 
   switch (flower) {
     case "r":
-      cost = qty * 7.5;
+      cost = 7.5;
       break;
     case "t":
-      cost = qty * 3;
+      cost = 3;
       break;
     case "s":
-      cost = qty * 9.2;
+      cost = 9.2;
       break;
     case "k":
-      cost = qty * 4.5;
+      cost = 4.5;
       break;
     case "l":
-      cost = qty * 6;
+      cost = 6;
       break;
     case "a":
-      cost = qty * 8;
+      cost = 8;
       break;
   }
+  cost = cost * qty;
   addYes.checked ? (cost += 5) : (cost += 0);
 
   result.innerHTML = cost;
@@ -49,8 +50,8 @@ function checkDates() {
   if (dayValue <= 5 && time === "w") cost = 6;
   if (dayValue > 5 && time === "r") cost = 8;
   if (dayValue > 5 && time === "w") cost = 10;
-  costOfDelivery.innerHTML = cost;
 
+  costOfDelivery.innerHTML = cost;
   return cost;
 }
 

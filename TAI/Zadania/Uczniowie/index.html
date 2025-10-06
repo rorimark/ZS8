@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zgody uczniów</title>
+
+    <style>
+      .checkboxes label {
+        margin-left: 0.5rem;
+      }
+      .checkboxes input {
+        margin-bottom: 0.5rem;
+      }
+      .search p {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <label for="surname">Nazwisko: </label>
+    <input type="text" name="surname" id="surname" /><br /><br />
+
+    <div class="checkboxes"></div>
+
+    <button id="add-info">Dodaj ucznia</button><br /><br />
+
+    <div class="search">
+      <p>
+        Uczniowie biorący udział w lekcjach religii:
+        <button id="religia-search">Pokaż</button><br />
+        <span id="religia"></span>
+      </p>
+
+      <p>
+        Uczniowie biorący udział w lekcjach edukacji zdrowotnej:
+        <button id="edukacja-zdrowotna-search">Pokaż</button><br />
+        <span id="edukacja-zdrowotna"></span>
+      </p>
+
+      <p>
+        Uczniowie ze zgodą na publikację wizerunku:
+        <button id="wizerunek-search">Pokaż</button><br />
+        <span id="wizerunek"></span>
+      </p>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

@@ -75,11 +75,13 @@ function deliveryCount() {
     price += 20;
   }
 
-  return price;
+  return price.toFixed(2).replace(".", ",");
 }
 
 function totalCount() {
-  return (parseFloat(subtotalCount()) + parseFloat(deliveryCount())).toFixed(2);
+  return (parseFloat(subtotalCount()) + parseFloat(deliveryCount()))
+    .toFixed(2)
+    .replace(".", ",");
 }
 
 function updateSummary() {
