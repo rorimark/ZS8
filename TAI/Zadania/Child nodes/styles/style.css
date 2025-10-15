@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: 90%;
+  height: 10vh;
+  background-color: cornflowerblue;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  width: 90%;
+  height: 70vh;
+  margin: 5%;
+  background-color: darkgrey;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+main > div {
+  width: 400px;
+  height: 400px;
+  background-color: aqua;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 250px;
+  height: 150px;
+}

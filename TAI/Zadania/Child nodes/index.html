@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Child Nodes</title>
+
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <label for="tekst">Wpisz tekst: </label>
+      <input type="text" name="tekst" id="tekst" /> <br />
+
+      <label for="pan">Pan: </label>
+      <input type="radio" name="plec" id="pan" />
+      <label for="pani">Pani: </label>
+      <input type="radio" name="plec" id="pani" /><br />
+
+      <label for="klasa">Wybierz klasę:</label>
+      <select name="klasa" id="klasa" required>
+        <option value="3AT">3AT</option>
+        <option value="3BT">3BT</option>
+        <option value="4AT">4AT</option>
+        <option value="4BT">4BT</option>
+      </select>
+      <button id="add-div">Dodaj</button>
+    </header>
+    <main id="main"></main>
+  </div>
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>
