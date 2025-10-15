@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: large;
+            color: rgb(7, 91, 91);
+        }
+
+        main {
+            background-color: rgb(143, 223, 223);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px auto;
+            padding: 50px;
+            width: 40%;
+            height: 60vh;
+        }
+
+        fieldset {
+            padding: 40px;
+        }
+
+        label {
+            width: 200px;
+            display: inline-block;
+        }
+
+        input[type="button"] {
+            text-align: center;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form>
+            <fieldset>
+                <legend>Sprzedaż biletów</legend>
+                <br>
+
+                <!-- Zniżki -->
+                <label for="zwykly">Zniżki:</label>
+                <input type="radio" name="znizki" id="zwykly"> Zwykły &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="znizki" id="ulgowy"> Ulgowy
+                <br><br>
+
+                <!-- Rodzaj -->
+                <label for="rodzaj">Rodzaj biletu:</label>
+                <select id="rodzaj">
+                    <option value="1">1 przejazd</option>
+                    <option value="2">15-minutowy</option>
+                    <option value="3">30-minutowy</option>
+                    <option value="4">60-minutowy</option>
+                </select>
+                <br><br>
+
+                <!-- Ile sztuk -->
+                <label for="ile">Liczba sztuk:</label>
+                <input type="number" id="ile" min="1">
+                <br><br><br>
+
+                <!-- Przycisk -->
+                <input type="button" value="Policz" onclick="policz()">
+                <br><br><br>
+
+                <!-- Odpowiedź -->
+                <p>Łączna cena za wybrane biety: <span id="wynik"></span> </p>
+
+
+
+            </fieldset>
+        </form>
+    </main>
+    <!-- Ceny biletów:
+    Ulgowy zniżka wynosi 50%.
+    Bilety normalne:
+    5zł - 1 przejazd
+    3zł - 15-minutowy
+    5zł - 30-minutowy
+    8zł - 60-minutowy -->
+
+    <script>
+        function policz() {
+            const isCheckedZwykly = document.getElementById("zwykly").checked;
+            const isCheckedUlgowy = document.getElementById("ulgowy").checked;
+            const rodzajBiletu = document.getElementById("rodzaj");
+            const qty = +document.getElementById("ile").value;
+            const wynik = document.getElementById("wynik");
+
+            if ((!isCheckedZwykly && !isCheckedUlgowy) || !rodzajBiletu.value || !qty) {
+                alert("Uzupełnij dane");
+                return;
+            }
+
+            let cost = 0;
+
+            switch (rodzajBiletu.value) {
+                case "1":
+                    cost = 5;
+                    break
+                case "2":
+                    cost = 3;
+                    break
+                case "3":
+                    cost = 5;
+                    break
+                case "4":
+                    cost = 8;
+                    break
+            }
+
+            if (isCheckedUlgowy) {
+                cost = cost * 0.5;
+            }
+
+            cost = cost * qty;
+            wynik.innerText = cost + " zł"
+        }
+    </script>
+</body>
+
+</html>
