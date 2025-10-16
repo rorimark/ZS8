@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06.10.2025 - PROGRESSBAR</title>
+    <style>
+        #progress{
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            min-width: 50px;
+        }
+    </style>
+    
+</head>
+<body onload="i = setInterval(progressBar, 10)">
+    <div id="progress"><span id="bar">0%</span></div>
+    <script>
+        let w = 1;
+        function progressBar(){
+            const progress = document.getElementById("progress");
+            const bar = document.getElementById("bar");
+
+            progress.style.display = "flex";
+            progress.style.alignItems = "center";
+            progress.style.justifyContent = "center";
+            progress.style.width = w + "%";
+            progress.style.backgroundColor = "red";
+            progress.style.color = "red";
+
+            // bar.style.width = `${w}%`;
+            bar.innerText = `${w}%`;
+        
+            w++;
+
+            if (w > 100){
+                clearInterval(i);
+            }
+        }
+    </script>
+</body>
+</html>

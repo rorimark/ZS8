@@ -90,18 +90,18 @@
         function policz() {
             const isCheckedZwykly = document.getElementById("zwykly").checked;
             const isCheckedUlgowy = document.getElementById("ulgowy").checked;
-            const rodzajBiletu = document.getElementById("rodzaj");
+            const rodzajBiletu = document.getElementById("rodzaj").value;
             const qty = +document.getElementById("ile").value;
             const wynik = document.getElementById("wynik");
 
-            if ((!isCheckedZwykly && !isCheckedUlgowy) || !rodzajBiletu.value || !qty) {
+            if ((!isCheckedZwykly && !isCheckedUlgowy) || !rodzajBiletu || !qty) {
                 alert("Uzupełnij dane");
                 return;
             }
 
             let cost = 0;
 
-            switch (rodzajBiletu.value) {
+            switch (rodzajBiletu) {
                 case "1":
                     cost = 5;
                     break

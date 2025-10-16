@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16.10.2025 - STOPER</title>
+    <script>
+        let ms = 1;
+        let s = 0;
+        let m = 0;
+        function stoper(){
+            document.getElementById("wy").innerHTML = m + ":" + s + ":" + ms;
+            ms++;
+            if(ms === 100){
+                ms = 0;
+                s++;
+            }
+            if(s === 60){
+                s = 0;
+                m++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="START" onclick="i = setInterval('stoper()', 10)">
+    <input type="button" value="STOP" onclick="clearInterval(i)">
+    <div id="wy">00:00:0000</div>
+</body>
+</html>

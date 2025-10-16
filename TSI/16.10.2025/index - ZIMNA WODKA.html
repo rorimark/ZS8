@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16.10.2025 - ZIMNA WODKA</title>
+</head>
+<style>
+
+</style>
+<script>
+    let napis = "Zimna wodka";
+
+    function wodka(){
+        const cont = document.getElementById("container");
+
+        let glowa = napis.charAt(0);
+        let ogon = napis.substring(1, napis.length);
+
+        napis = ogon + glowa;
+
+        cont.innerHTML = napis
+    }
+
+
+    
+</script>
+<body onload="setInterval(wodka, 100)">
+        <div id="container"></div>
+</body>
+</html>
