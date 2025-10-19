@@ -88,40 +88,47 @@
 
     <script>
         function policz() {
+            // Pobieramy elementy z HTML
             const isCheckedZwykly = document.getElementById("zwykly").checked;
             const isCheckedUlgowy = document.getElementById("ulgowy").checked;
             const rodzajBiletu = document.getElementById("rodzaj").value;
             const qty = +document.getElementById("ile").value;
             const wynik = document.getElementById("wynik");
 
+            // Sprawdzamy kompletność wprowadzonych danych
             if ((!isCheckedZwykly && !isCheckedUlgowy) || !rodzajBiletu || !qty) {
                 alert("Uzupełnij dane");
                 return;
             }
 
+            // Obliczamy łączny koszt biletów
             let cost = 0;
 
             switch (rodzajBiletu) {
                 case "1":
                     cost = 5;
-                    break
+                    break;
                 case "2":
                     cost = 3;
-                    break
+                    break;
                 case "3":
                     cost = 5;
-                    break
+                    break;
                 case "4":
                     cost = 8;
-                    break
+                    break;
             }
 
+            // Sprawdzamy czy użytkownik kupuje bilety ulgowe
             if (isCheckedUlgowy) {
                 cost = cost * 0.5;
             }
 
+            // Mnożymy cenę biletu przez ich liczbę
             cost = cost * qty;
-            wynik.innerText = cost + " zł"
+
+            // Wyświetlamy wynik obliczeń na ekranie użytkownika
+            wynik.innerText = cost + " zł";
         }
     </script>
 </body>
