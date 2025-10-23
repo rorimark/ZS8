@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.hours,
+.minutes,
+.seconds {
+  display: flex;
+  gap: 10px;
+}
+
+.hour-left,
+.hour-right,
+.minute-left,
+.minute-right,
+.second-left,
+.second-right {
+}
+
+.hour-left > div,
+.hour-right > div,
+.minute-left > div,
+.minute-right > div,
+.second-left > div,
+.second-right > div {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: darkgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.hour-left-1,
+.hour-left-2,
+.minute-left-1,
+.second-left-1 {
+  visibility: hidden;
+}
