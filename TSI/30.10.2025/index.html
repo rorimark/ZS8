@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30.10.2025 - KALKULATOR</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form name="f">
+      <input type="text" name="w" id="w" />
+
+      <br />
+      <button type="button" name="ce" onclick="f.w.value = ''">CE</button>
+      <button
+        type="button"
+        name="pow2"
+        onclick="f.w.value = `${power(f.w.value, 2)}`"
+      >
+        x <sup>2</sup>
+      </button>
+      <button
+        type="button"
+        name="pow3"
+        onclick="f.w.value = `${power(f.w.value, 3)}`"
+      >
+        x <sup>3</sup>
+      </button>
+      <button
+        type="button"
+        name="sqr-root"
+        onclick="f.w.value = `${sqrRoot(f.w.value)}`"
+      >
+        √x
+      </button>
+      <br />
+      <button type="button" name="mult" onclick="f.w.value += '*'">*</button>
+      <button type="button" name="dev" onclick="f.w.value += '/'">/</button>
+      <button type="button" name="plus" onclick="f.w.value += '+'">+</button>
+      <button type="button" name="minus" onclick="f.w.value += '-'">-</button>
+      <br />
+      <button type="button" name="b0" onclick="f.w.value += '0'">0</button>
+      <button type="button" name="b1" onclick="f.w.value += '1'">1</button>
+      <button type="button" name="b2" onclick="f.w.value += '2'">2</button>
+      <button type="button" name="b3" onclick="f.w.value += '3'">3</button>
+      <br />
+      <button type="button" name="b4" onclick="f.w.value += '4'">4</button>
+      <button type="button" name="b5" onclick="f.w.value += '5'">5</button>
+      <button type="button" name="b6" onclick="f.w.value += '6'">6</button>
+      <button type="button" name="b7" onclick="f.w.value += '7'">7</button>
+      <br />
+      <button type="button" name="b8" onclick="f.w.value += '8'">8</button>
+      <button type="button" name="b9" onclick="f.w.value += '9'">9</button>
+      <button
+        type="button"
+        name="del"
+        onclick="f.w.value = `${delLast(f.w.value)}`"
+      >
+        DEL
+      </button>
+      <button
+        type="button"
+        name="equal"
+        onclick="f.w.value += ` = ${eval(f.w.value)}`"
+      >
+        <b>=</b>
+      </button>
+    </form>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+button {
+  user-select: none;
+  width: 35px;
+  height: 35px;
+  margin: 2.5px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 181, 252, 1) 0%,
+    rgba(255, 255, 255, 1) 51%,
+    rgba(237, 221, 83, 1) 100%
+  );
+}
+
+#w {
+  width: 155px;
+  height: 35px;
+}
