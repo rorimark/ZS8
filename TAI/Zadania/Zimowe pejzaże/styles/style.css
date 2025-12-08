@@ -1,0 +1,18 @@
+body {
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  background: #2a7b9b;
+  background: linear-gradient(
+    0deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 186, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-attachment: fixed;
+}
+
+main {
+  width: 100%;
+  height: calc(100vh - 140px);
+}

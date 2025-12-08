@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <title>MyChat</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="folders-bar">
+        <nav class="folders"></nav>
+        <div class="settings">
+          <img src="images/settings.png" alt="Settings" />
+          <span>Settings</span>
+        </div>
+      </div>
+
+      <nav class="chats-bar">
+        <header>
+          <header class="chats-bar-heading"><span>Chats</span></header>
+          <form action="">
+            <input type="search" name="chat-search" id="side-chat-search" />
+          </form>
+          <!-- <hr /> -->
+        </header>
+
+        <nav class="chats"></nav>
+      </nav>
+      <main class="chat-window">
+        <header class="chat-header"></header>
+        <div class="unknown-chat"></div>
+      </main>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
