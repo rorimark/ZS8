@@ -1,0 +1,34 @@
+1: 
+SELECT regions.name as region, continents.name as kontynent FROM regions 
+INNER JOIN continents ON regions.continent_id = continents.continent_id;
+
+2:
+SELECT countries.name as kraj, regions.name as region FROM countries 
+INNER JOIN regions ON regions.region_id = countries.region_id 
+WHERE regions.name = "Eastern Europe";
+
+3:
+SELECT countries.name as nazwa_kraju FROM countries 
+INNER JOIN country_languages ON countries.country_id = country_languages.country_id 
+WHERE country_languages.language_id = 23;
+
+4:
+SELECT countries.name as nazwa_kraju, countries.country_id, country_stats.population FROM countries 
+INNER JOIN country_stats ON countries.country_id = country_stats.country_id 
+WHERE country_stats.year = 1997 AND country_stats.population > 100000000 
+ORDER BY country_stats.population DESC;
+
+5:
+SELECT countries.name as nazwa_kraju, countries.country_id, country_stats.population, continents.name as nazwa_kontynentu FROM countries 
+INNER JOIN regions ON regions.region_id = countries.region_id 
+INNER JOIN continents ON regions.continent_id = continents.continent_id 
+INNER JOIN country_stats ON countries.country_id = country_stats.country_id 
+WHERE country_stats.year = 1997 AND country_stats.population > 100000000 
+ORDER BY country_stats.population DESC;
+
+6:
+SELECT continents.name as nazwa_kontynentu, SUM(region_areas.region_area) as powiezchnia FROM region_areas 
+INNER JOIN regions ON regions.name = region_areas.region_name 
+INNER JOIN continents ON regions.continent_id = continents.continent_id 
+GROUP BY continents.name 
+ORDER BY powiezchnia ASC;

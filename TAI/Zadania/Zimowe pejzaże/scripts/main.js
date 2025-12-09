@@ -41,7 +41,7 @@ let x = 100;
 let y = 100;
 
 main.addEventListener("click", () => {
-  if (!(qu < images.length)) {
+  if (qu > images.length - 1) {
     qu = 1;
     while (main.firstChild) {
       main.removeChild(main.firstChild);
