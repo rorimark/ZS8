@@ -1,0 +1,19 @@
+.star {
+  position: absolute;
+  animation-name: falling;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling {
+  0% {
+    opacity: 0%;
+  }
+  10% {
+    transform: translateY(10vh);
+    opacity: 40%;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 100%;
+  }
+}

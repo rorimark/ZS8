@@ -1,4 +1,5 @@
 const main = document.querySelector("main");
+const stars = document.querySelector(".stars");
 
 const images = [
   "./images/platek.png",
@@ -66,4 +67,34 @@ main.addEventListener("click", () => {
   y += 40;
 });
 
+function rand(min, max) {
+  return ~~(Math.random() * (max - min) + min);
+}
+
+function fallingStar() {
+  const star = document.createElement("img");
+
+  star.src = "./images/gwiazdka.png";
+  star.classList.add("star");
+
+  const fromLeft = rand(0, 100);
+  star.style.left = fromLeft + "vw";
+
+  const delay = rand(0, 150);
+  star.style.animationDuration = delay + "s";
+
+  const fallingTime = rand(50, 150);
+  star.style.animationDuration = fallingTime + "s";
+
+  const size = rand(1, 4);
+  star.style.width = size + "vh";
+  star.style.height = size + "vh";
+
+  stars.appendChild(star);
+}
+
 platkiRender();
+
+for (i = 0; i <= 100; i++) {
+  fallingStar();
+}

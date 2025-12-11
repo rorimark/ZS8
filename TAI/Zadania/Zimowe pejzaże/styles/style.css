@@ -12,7 +12,29 @@ body {
   background-attachment: fixed;
 }
 
+img {
+  z-index: 2;
+}
+
 main {
   width: 100%;
   height: calc(100vh - 140px);
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  animation-name: falling;
+  animation-iteration-count: infinite;
+  z-index: 100;
+}
+
+@keyframes falling {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 100%;
+  }
 }

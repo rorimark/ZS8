@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<script>
+   function sprawdz(){
+     let we = document.getElementById("haslo").value;
+    // const regex = /^[7-9]$|^1[0-2]$/;
+    const regex = /^[A-z0-9.-]{1,}@[A-z0-9.]{1,}$/;
+     
+     if(regex.test(we)){
+        alert("poprawne");
+     }
+     else
+       alert("niepoprawne");
+     
+     
+     //regular expressions
+   }
+
+</script>
+<form>
+  <label>HASŁO:<input type="text"
+                      placeholder = "wpisz hasło"
+                      id = "haslo"
+                      
+                      
+  ></label><br>
+  <input type = button onclick = sprawdz() value="SPRAWDZ">
+  
+</form>
+</body>
+</html>
