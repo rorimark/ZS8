@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>TODO LIST</title>
+  </head>
+  <body>
+    <div class="cont-wrapper">
+      <div class="container">
+        <p class="header-title">TODO</p>
+        <form id="task-form">
+          <input
+            type="text"
+            name="task-input"
+            id="task-input"
+            placeholder="Type your task here..."
+          />
+          <input type="submit" id="task-submit" value="ADD TASK" />
+        </form>
+        <div class="task-holder">
+          <ul class="task-list"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
