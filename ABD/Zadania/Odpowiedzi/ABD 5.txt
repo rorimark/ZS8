@@ -1,0 +1,54 @@
+1:
+SELECT CONCAT(imie, '', nazwisko) FROM uczniowie;
+2:
+SELECT uczniowie.imie, uczniowie.nazwisko, projekty.nazwa FROM uczniowie 
+RIGHT OUTER JOIN projekty USING(id_ucznia);
+3:
+SELECT nazwa FROM projekty;
+4:
+SELECT COUNT(uczniowie.imie) as 'Ilość uczniów' FROM uczniowie; 
+SELECT COUNT(projekty.nazwa) as 'Ilość projektów' FROM projekty;
+5:
+SELECT uczniowie.imie, uczniowie.nazwisko, projekty.nazwa FROM uczniowie 
+LIEFT OUTER JOIN projekty USING(id_ucznia);
+6:
+SELECT nazwa FROM projekty 
+LEFT JOIN uczniowie ON projekty.id_ucznia = uczniowie.id_ucznia WHERE uczniowie.id_ucznia IS NULL;
+7:
+SELECT DISTINCT klasy.wychowawca FROM uczniowie 
+LEFT JOIN projekty USING(id_ucznia) 
+INNER JOIN klasy USING(id_klasy) WHERE projekty.id_projektu;
+8:
+SELECT uczniowie.imie, uczniowie.nazwisko, projekty.nazwa FROM uczniowie 
+RIGHT OUTER JOIN projekty USING(id_ucznia) 
+UNION 
+SELECT uczniowie.imie, uczniowie.nazwisko, projekty.nazwa FROM uczniowie 
+LEFT OUTER JOIN projekty USING(id_ucznia);
+9:
+SELECT 
+    (SELECT COUNT(*) FROM projekty) AS liczba_projektow,
+    (SELECT COUNT(*) FROM uczniowie) AS liczba_uczniow;
+10:
+SELECT klasy.nazwa, klasy.wychowawca, COUNT(uczniowie.imie) AS 'Ilość uczniów' FROM klasy 
+JOIN uczniowie USING(id_klasy) GROUP BY klasy.id_klasy;
+11:
+SELECT klasy.nazwa, klasy.wychowawca, COUNT(projekty.id_projektu) AS 'Ilość uczniów z projektem' FROM klasy 
+JOIN uczniowie ON klasy.id_klasy = uczniowie.id_klasy 
+JOIN projekty ON uczniowie.id_ucznia = projekty.id_ucznia
+GROUP BY klasy.id_klasy, klasy.nazwa, klasy.wychowawca;
+12:
+SELECT klasy.wychowawca, COUNT(uczniowie.id_ucznia) AS Uczniowie_bez_projektu FROM klasy 
+JOIN uczniowie ON klasy.id_klasy = uczniowie.id_klasy
+LEFT JOIN projekty ON uczniowie.id_ucznia = projekty.id_ucznia
+WHERE projekty.id_ucznia IS NULL
+ORDER BY Uczniowie_bez_projektu' ASC LIMIT 1;
+13:
+SELECT klasy.nazwa, klasy.wychowawca, COUNT(projekty.id_projektu) AS Uczniowie_z_projektem, 
+COUNT(uczniowie.id_ucznia) AS Uczniowie_bez_projektu FROM klasy 
+JOIN uczniowie ON klasy.id_klasy = uczniowie.id_klasy 
+JOIN projekty ON uczniowie.id_ucznia = projekty.id_ucznia
+GROUP BY klasy.id_klasy, klasy.nazwa, klasy.wychowawca
+LEFT JOIN projekty ON uczniowie.id_ucznia = projekty.id_ucznia
+WHERE projekty.id_ucznia IS NULL
+GROUP BY klasy.wychowawca;
+

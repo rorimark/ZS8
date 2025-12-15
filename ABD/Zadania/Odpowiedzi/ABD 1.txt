@@ -1,0 +1,10 @@
+1. SELECT Name, Continent, HeadOfState FROM country WHERE GovernmentForm LIKE "%Monarchy%";
+2. SELECT * FROM country WHERE Continent = "Europe" AND IndepYear IS Null;
+3. SELECT Count(DISTINCT Region) FROM country WHERE Continent = "Asia";
+4. SELECT * FROM country WHERE Region = "Nordic Countries" ORDER BY Population DESC;
+5. SELECT Continent, Count(DISTINCT Region) FROM country GROUP BY Continent;
+6. SELECT Region, ROUND(AVG(LifeExpectancy), 1) FROM country GROUP BY Region HAVING AVG(LifeExpectancy) > 65 ORDER BY AVG(LifeExpectancy) DESC;
+7. SELECT District FROM city WHERE Name LIKE "w%o" OR Name LIKE "w%e";
+8. SELECT Continent, Count(Name) FROM country WHERE Name LIKE "P%" GROUP BY Continent HAVING COUNT(Name) >= 3;
+9. SELECT ID, Name FROM city WHERE ID > 3 AND ID < 12 OR ID IN (14,15,16,);
+10. SELECT Region AS region__bez__krola, AVG(Population) AS avg__pop FROM country WHERE AND NOT GovernmentForm LIKE "%Monarchy%" GROUP BY Region HAVING avg__pop > 10000000 ORDER BY avg__pop DESC;
