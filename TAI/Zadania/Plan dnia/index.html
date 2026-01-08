@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Plan dnia</h1>
+    </header>
+    <main>
+      <section id="lewa">
+        <form>
+          <fieldset>
+            <legend>Wybór dnia</legend>
+            <label class="w150" for="data">Wybierz datę</label>
+            <input type="date" id="data" />
+            <section class="przyciski">
+              <input type="button" value="Wprowadź datę" onclick="termin()" />
+            </section>
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>Przygotowanie planu dnia</legend>
+            <label class="w150" for="rodzaj">Wybierz aktywność</label>
+            <select id="rodzaj">
+              <option value="6"></option>
+              <option value="1">Praca/Nauka</option>
+              <option value="2">Spotkanie z przyjaciółmi</option>
+              <option value="3">Obowiązki domowe</option>
+              <option value="4">Trening</option>
+              <option value="5">Impreza</option>
+            </select>
+            <label class="w150" for="czas">Czas</label>
+            <input type="text" id="czas" placeholder="Wpisz czas..." />
+            <label class="w150" for="opis">Opis</label
+            ><input type="text" id="opis" placeholder="Wpisz opis..." />
+            <br />
+            <section class="przyciski">
+              <input type="button" value="Wprowadź info" onclick="wprowadz()" />
+            </section>
+          </fieldset>
+          <br />
+          <section class="przyciski jakFieldset">
+            <input type="button" value="Zapisz plan" onclick="zapisz()" />
+            <input type="button" value="Drukuj plan" onclick="drukuj()" />
+          </section>
+        </form>
+      </section>
+      <section id="prawa">
+        <section id="kiedy"></section>
+        <section id="co"></section>
+      </section>
+    </main>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
