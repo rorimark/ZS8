@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  gap: 5px;
+  background-color: #23272f;
+}
+
+.binary {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.binary:nth-child(2n) {
+  margin-right: 20px;
+}
+
+.binary span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.binary span.off {
+  background-color: #3f4753;
+}
+
+.binary span.on {
+  background-color: #149eca;
+}
+
+.binary p {
+  text-align: center;
+  color: #149eca;
+}
