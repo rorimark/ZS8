@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista zakupów</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h2 id="naglowek">Dzisiaj jest:<span id="dataZakupow"></span>
+        </h2>
+        <script>
+            //----------------------------------------------------------------------------
+            //skrypt 1
+            //----------------------------------------------------------------------------
+
+            //przygotowane tablice
+            let dniTygodnia = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
+            let miesiace = [
+                    "stycznia",    // indeks 0
+                    "lutego",      // indeks 1
+                    "marca",       // indeks 2
+                    "kwietnia",    // indeks 3
+                    "maja",        // indeks 4
+                    "czerwca",     // indeks 5
+                    "lipca",       // indeks 6
+                    "sierpnia",    // indeks 7
+                    "września",    // indeks 8
+                    "października",// indeks 9
+                    "listopada",   // indeks 10
+                    "grudnia"      // indeks 11
+                ];
+            
+            let data = new Date();       
+            //miejsce na kod zdającego
+           
+            let dzienTygodnia = data.getDay()
+            let dzienMiesiaca = data.getDate()
+            let miesiac = data.getMonth()
+
+            let naglowek = document.getElementById("naglowek")
+            naglowek.innerHTML += dniTygodnia[dzienTygodnia] + " " + dzienMiesiaca  + " "  + miesiace[miesiac] + " ";
+
+            if(dzienTygodnia>=1 && dzienTygodnia<=4){
+                naglowek.innerHTML += "miłych zakupów"
+            }
+            else if (dzienTygodnia === 5 || dzienTygodnia === 6){
+                naglowek.innerHTML +=  "zbliża sie weekend zrob wieksze zakupy"
+                naglowek.style.color="red"
+            }
+            else{
+                naglowek.innerHTML += "sklepy zamknięte"
+                naglowek.style.color="red"
+            }
+            </script>
+        <img src="koszyk.png" id="koszyk">
+    </header>
+    <br><br>
+    <main>
+        <fieldset>
+            <legend>Wprowadź kolejne pozycje do Twojej listy zakupów</legend>
+            <br><br>
+            Nazwa produktu  &nbsp; <input type="text" id="produkt">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            Ile  &nbsp;<input type="number" id="ilosc">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            Jednostka 
+            <input type="radio" name="jednostka" id="sztuk" checked> szt.
+            <input type="radio" name="jednostka" id="kg">    kg
+            <input type="radio" name="jednostka" id="gram">  g
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            Na dziale  &nbsp; <select id="dzial">
+                <option value="warzywa">  Warzywa i owoce                 </option>
+                <option value="pieczywo"> Pieczywo i artykuły cukiernicze </option>
+                <option value="nabial">   Nabiał, mięso i ryby            </option>
+                <option value="napoje">   Napoje                          </option>
+            </select>
+            &nbsp; &nbsp; &nbsp;&nbsp; 
+            <input type="button" value="Zatwierdź" onclick="dodaj()">
+            <br><br><br>
+        </fieldset>
+
+        <section id="listy">
+            <section id="dzial1">
+                <h3>Owoce i warzywa</h3>
+                <ul id="ul1"></ul>
+            </section>
+            <section id="dzial2">
+                <h3>Pieczywo i wyroby cukiernicze</h3>
+                <ul id="ul2"></ul>
+            </section>
+            <section id="dzial3">
+                <h3>Nabiał, mięso i ryby</h3>
+                <ul id="ul3"></ul>
+            </section>
+            <section id="dzial4">
+                <h3>Napoje</h3>
+                <ul id="ul4"></ul>
+            </section>
+        </section>
+        <script>
+            //----------------------------------------------------------------------------
+            //skrypt 2
+            //----------------------------------------------------------------------------
+            
+            //miejsce na kod zdającego
+
+            function dodaj(){
+                let produkt = getElementById("produkt")
+                let ilosc = getElementById("ilosc")
+                let jednostka = getElementById("jednostka")
+                let dzial  = getElementById("dzial")
+
+                let li = document.createElement("li")
+                li.textContent = produkt + "-" + ilosc + "-" + jednostka //+ "-" + dzial 
+                document.getElementById(dzial.appendChild)
+            }
+
+        </script>
+
+    </main>
+    <footer>
+        <input type="button" value="Drukuj listę" onclick="drukuj()">
+        <script>
+            function drukuj() {
+                window.print();
+            }
+        </script>
+    </footer>
+</body>
+</html>
