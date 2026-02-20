@@ -1,0 +1,118 @@
+{
+    "sourceFile": "TAI-PHP/Zadania/index.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 25,
+            "patches": [
+                {
+                    "date": 1771421427494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771421886054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     <title>Document</title>\n </head>\n <body>\n     <?php \n-    \n+    echo \"Hello World\";\n     ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771421966057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>Document</title>\n+</head>\n+<body>\n+    <?php \n+    echo \"Tablice - zadania\";\n+    ?>\n+</body>\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771421974393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,25 +2,12 @@\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    <title>Document</title>\n+    <title>Tablice - zadania</title>\n </head>\n <body>\n     <?php \n     echo \"Tablice - zadania\";\n     ?>\n </body>\n-</html>\n-<!DOCTYPE html>\n-<html lang=\"en\">\n-<head>\n-    <meta charset=\"UTF-8\">\n-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    <title>Document</title>\n-</head>\n-<body>\n-    <?php \n-    echo \"Hello World\";\n-    ?>\n-</body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771421995926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,13 @@\n </head>\n <body>\n     <?php \n     echo \"Tablice - zadania\";\n+\n+    function printArray($array) {\n+        echo \"<pre>\";\n+        print_r($array);\n+        echo \"</pre>\";\n+    }\n     ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422003930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n <body>\n     <?php \n     echo \"Tablice - zadania\";\n \n-    function printArray($array) {\n+    function zadanie1() {\n         echo \"<pre>\";\n         print_r($array);\n         echo \"</pre>\";\n     }\n"
+                },
+                {
+                    "date": 1771422028375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n     <?php \n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n-        echo \"<pre>\";\n-        print_r($array);\n-        echo \"</pre>\";\n+$tab1 = array(\"\",\"\",\"\",\"\",\"\",\"\",);\n+$tab2 = array(\"\",\"\",\"\",\"\",);\n+$tab3 = array(\"\",\"\",\"\",\"\",);\n     }\n     ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422065044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <?php \n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n-$tab1 = array(\"\",\"\",\"\",\"\",\"\",\"\",);\n+$tab1 = array(\"Tablica 1\");\n $tab2 = array(\"\",\"\",\"\",\"\",);\n $tab3 = array(\"\",\"\",\"\",\"\",);\n     }\n     ?>\n"
+                },
+                {
+                    "date": 1771422075379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n $tab1 = array(\"Tablica 1\");\n-$tab2 = array(\"\",\"\",\"\",\"\",);\n+$tab2 = [\"Tablica 2\"];\n $tab3 = array(\"\",\"\",\"\",\"\",);\n     }\n     ?>\n </body>\n"
+                },
+                {
+                    "date": 1771422085865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n     function zadanie1() {\n $tab1 = array(\"Tablica 1\");\n $tab2 = [\"Tablica 2\"];\n-$tab3 = array(\"\",\"\",\"\",\"\",);\n+$tab3[0] = \"Tablica 3\";\n     }\n     ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422130462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,12 @@\n     <?php \n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n-$tab1 = array(\"Tablica 1\");\n-$tab2 = [\"Tablica 2\"];\n-$tab3[0] = \"Tablica 3\";\n+        $tab1 = array(\"Tablica 1\");\n+        $tab2 = [\"Tablica 2\"];\n+        $tab3[0] = \"Tablica 3\";\n+        var_dump($tab1.$tab2.$tab3);\n     }\n     ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422155723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n         var_dump($tab1.$tab2.$tab3);\n+        echo($tab1.$tab2.$tab3);\n     }\n     ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422198912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,12 @@\n     function zadanie1() {\n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n-        var_dump($tab1.$tab2.$tab3);\n-        echo($tab1.$tab2.$tab3);\n+        var_dump($tab1);\n+        var_dump($tab2);\n+        var_dump($tab3);\n+        for( $i = 0; $i < count($tab1); $i++ ) {}\n     }\n     ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422302797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,18 @@\n         $tab3[0] = \"Tablica 3\";\n         var_dump($tab1);\n         var_dump($tab2);\n         var_dump($tab3);\n-        for( $i = 0; $i < count($tab1); $i++ ) {}\n+        for( $i = 0; $i < count($tab1); $i++ ) {\n+            echo $tab1[$i] . \"<br>\";\n+        }\n+        for( $i = 0; $i < count($tab2); $i++ ) {\n+            echo $tab2[$i] . \"<br>\";\n+        }\n+        for( $i = 0; $i < count($tab3); $i++ ) {\n+            echo $tab3[$i] . \"<br>\";\n+        }\n     }\n+    zadanie1()\n     ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422345945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,17 +15,9 @@\n         $tab3[0] = \"Tablica 3\";\n         var_dump($tab1);\n         var_dump($tab2);\n         var_dump($tab3);\n-        for( $i = 0; $i < count($tab1); $i++ ) {\n-            echo $tab1[$i] . \"<br>\";\n-        }\n-        for( $i = 0; $i < count($tab2); $i++ ) {\n-            echo $tab2[$i] . \"<br>\";\n-        }\n-        for( $i = 0; $i < count($tab3); $i++ ) {\n-            echo $tab3[$i] . \"<br>\";\n-        }\n+        echo $tab1.\"<br/>\".$tab2.\"<br/>\".$tab3.\"<br/>\"\n     }\n     zadanie1()\n     ?>\n </body>\n"
+                },
+                {
+                    "date": 1771422363761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,17 @@\n         $tab3[0] = \"Tablica 3\";\n         var_dump($tab1);\n         var_dump($tab2);\n         var_dump($tab3);\n-        echo $tab1.\"<br/>\".$tab2.\"<br/>\".$tab3.\"<br/>\"\n+        for( $i = 0; $i < count($tab1); $i++ ) {\n+            echo $tab1[$i] . \"<br>\";\n+        }\n+        for( $i = 0; $i < count($tab2); $i++ ) {\n+            echo $tab2[$i] . \"<br>\";\n+        }\n+        for( $i = 0; $i < count($tab3); $i++ ) {\n+            echo $tab3[$i] . \"<br>\";\n+        }\n     }\n     zadanie1()\n     ?>\n </body>\n"
+                },
+                {
+                    "date": 1771422404131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,15 @@\n     function zadanie1() {\n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n+\n         var_dump($tab1);\n         var_dump($tab2);\n         var_dump($tab3);\n+\n+        echo\"<br/>\";\n+\n         for( $i = 0; $i < count($tab1); $i++ ) {\n             echo $tab1[$i] . \"<br>\";\n         }\n         for( $i = 0; $i < count($tab2); $i++ ) {\n"
+                },
+                {
+                    "date": 1771422412802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n     <?php \n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n+         echo\"<br/>\";\n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n \n"
+                },
+                {
+                    "date": 1771422429075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n     <?php \n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n-         echo\"<br/>\";\n+        echo\"<br/>\";\n+        echo\"<br/>\";\n+\n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n \n"
+                },
+                {
+                    "date": 1771422436915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n         echo\"<br/>\";\n-        echo\"<br/>\";\n+        echo\"Zadanie 1\";\n \n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n"
+                },
+                {
+                    "date": 1771422443358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n         echo\"<br/>\";\n-        echo\"Zadanie 1\";\n+        echo\"Zadanie 1<br/>\";\n \n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n"
+                },
+                {
+                    "date": 1771422454093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n     <?php \n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n-        echo\"<br/>\";\n-        echo\"Zadanie 1<br/>\";\n+        echo\"<br/><br/>\";\n+        echo\"Zadanie 1\";\n \n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n"
+                },
+                {
+                    "date": 1771422462205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n         echo\"<br/><br/>\";\n-        echo\"Zadanie 1\";\n+        echo\"Zadanie 1\"<br/>;\n \n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n"
+                },
+                {
+                    "date": 1771422477588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     echo \"Tablice - zadania\";\n \n     function zadanie1() {\n         echo\"<br/><br/>\";\n-        echo\"Zadanie 1\"<br/>;\n+        echo\"Zadanie 1<br/>\";\n \n         $tab1 = array(\"Tablica 1\");\n         $tab2 = [\"Tablica 2\"];\n         $tab3[0] = \"Tablica 3\";\n@@ -34,6 +34,10 @@\n         }\n     }\n     zadanie1()\n     ?>\n+\n+        function zadanie1() {\n+        echo\"<br/><br/>\";\n+        echo\"Zadanie 1<br/>\";\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422503019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,12 +32,16 @@\n         for( $i = 0; $i < count($tab3); $i++ ) {\n             echo $tab3[$i] . \"<br>\";\n         }\n     }\n+\n+    function zadanie2() {}\n+\n+\n+\n     zadanie1()\n+    \n     ?>\n \n-        function zadanie1() {\n-        echo\"<br/><br/>\";\n-        echo\"Zadanie 1<br/>\";}\n+        \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771422654929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,52 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>Tablice - zadania</title>\n+</head>\n+<body>\n+    <?php \n+    echo \"Tablice - zadania\";\n+\n+    function zadanie1() {\n+        echo\"<br/><br/>\";\n+        echo\"Zadanie 1<br/>\";\n+\n+        $tab1 = array(\"Tablica 1\");\n+        $tab2 = [\"Tablica 2\"];\n+        $tab3[0] = \"Tablica 3\";\n+\n+        var_dump($tab1);\n+        var_dump($tab2);\n+        var_dump($tab3);\n+\n+        echo\"<br/>\";\n+\n+        foreach( $tab1 as $v ) {\n+            echo $v . \"<br>\";\n+        }\n+        foreach( $tab2 as $v ) {\n+            echo $v . \"<br>\";\n+        }\n+        foreach( $tab3 as $v ) {\n+            echo $v . \"<br>\";\n+        }\n+    }\n+\n+    function zadanie2() {\n+        echo\"<br/><br/>\";\n+        echo\"Zadanie 2<br/>\";\n+        $napis = \"programuję w języku PHP\";\n+\n+    }\n+\n+\n+\n+    zadanie1()\n+    \n+    ?>\n+\n+        \n+</body>\n+</html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1771421427494,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n</head>\n<body>\n    <?php \n    \n    ?>\n</body>\n</html>"
+        }
+    ]
+}

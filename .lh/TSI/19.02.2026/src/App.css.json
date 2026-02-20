@@ -1,0 +1,258 @@
+{
+    "sourceFile": "TSI/19.02.2026/src/App.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 60,
+            "patches": [
+                {
+                    "date": 1771493415143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771494246544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+.letters {\n+  display: flex;\n+  flex-wrap: wrap;\n+  justify-content: center;\n+  margin-top: 20px;\n+}\n"
+                },
+                {
+                    "date": 1771494256319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .letters {\n   display: flex;\n   flex-wrap: wrap;\n-  justify-content: center;\n+  justify-content: start;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494276991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .letters {\n-  display: flex;\n-  flex-wrap: wrap;\n-  justify-content: start;\n+  display: grid;\n+  grid-template-columns: repeat(7, 1fr);\n+  gap: 10px;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494286025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .letters {\n   display: grid;\n-  grid-template-columns: repeat(7, 1fr);\n+  grid-template-columns: repeat(7, 0.5fr);\n   gap: 10px;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494344270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-.letters {\n+.letters-container {\n   display: grid;\n-  grid-template-columns: repeat(7, 0.5fr);\n+  grid-template-columns: repeat(7, 1fr);\n   gap: 10px;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494355958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,12 @@\n   grid-template-columns: repeat(7, 1fr);\n   gap: 10px;\n   margin-top: 20px;\n }\n+\n+.letter-button {\n+  padding: 10px;\n+  font-size: 18px;\n+  cursor: pointer;\n+  background-color: #f0f0f0;\n+  border: none;\n+}\n"
+                },
+                {
+                    "date": 1771494544057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,11 @@\n   font-size: 18px;\n   cursor: pointer;\n   background-color: #f0f0f0;\n   border: none;\n+  border-radius: 5px;\n }\n+\n+.error-button {\n+  background-color: #ff4d4d;\n+  color: white;\n+}\n"
+                },
+                {
+                    "date": 1771494550928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,4 +17,10 @@\n .error-button {\n   background-color: #ff4d4d;\n   color: white;\n }\n+\n+.reset-button {\n+  background-color: #4caf50;\n+  color: white;\n+  margin-top: 20px;\n+}\n"
+                },
+                {
+                    "date": 1771494731063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n+.hangman {\n+  text-align: center;\n+  margin-bottom: 20px;\n+}\n+\n .letters-container {\n   display: grid;\n   grid-template-columns: repeat(7, 1fr);\n   gap: 10px;\n@@ -21,6 +26,5 @@\n \n .reset-button {\n   background-color: #4caf50;\n   color: white;\n-  margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494744392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,11 @@\n+body {\n+  font-family: Arial, sans-serif;\n+  background-color: #f9f9f9;\n+  margin: 0;\n+  padding: 20px;\n+}\n+\n .hangman {\n   text-align: center;\n   margin-bottom: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494755420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n body {\n   font-family: Arial, sans-serif;\n-  background-color: #f9f9f9;\n   margin: 0;\n   padding: 20px;\n }\n \n"
+                },
+                {
+                    "date": 1771494773578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,13 @@\n   margin: 0;\n   padding: 20px;\n }\n \n+#root {\n+  max-width: 600px;\n+  margin: 0 auto;\n+}\n+\n .hangman {\n   text-align: center;\n   margin-bottom: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494809209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,8 @@\n   margin: 0;\n   padding: 20px;\n }\n \n-#root {\n-  max-width: 600px;\n-  margin: 0 auto;\n-}\n-\n .hangman {\n   text-align: center;\n   margin-bottom: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494833590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,10 @@\n \n .letter-button {\n   padding: 10px;\n   font-size: 18px;\n+  min-width: none;\n+  min-height: 50px;\n   cursor: pointer;\n   background-color: #f0f0f0;\n   border: none;\n   border-radius: 5px;\n"
+                },
+                {
+                    "date": 1771494840776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \n .letter-button {\n   padding: 10px;\n   font-size: 18px;\n-  min-width: none;\n+  min-width: 50px;\n   min-height: 50px;\n   cursor: pointer;\n   background-color: #f0f0f0;\n   border: none;\n"
+                },
+                {
+                    "date": 1771494852849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,13 @@\n   margin: 0;\n   padding: 20px;\n }\n \n+#root {\n+  max-width: 600px;\n+  margin: 0 auto;\n+}\n+\n .hangman {\n   text-align: center;\n   margin-bottom: 20px;\n }\n"
+                },
+                {
+                    "date": 1771494869568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,41 @@\n+body {\n+  font-family: Arial, sans-serif;\n+  margin: 0;\n+  padding: 20px;\n+}\n+\n+#root {\n+  max-width: 600px;\n+  margin: 0 auto;\n+}\n+\n+.hangman {\n+  text-align: center;\n+  margin-bottom: 20px;\n+}\n+\n+.letters-container {\n+  display: grid;\n+  grid-template-columns: repeat(7, 1fr);\n+  gap: 10px;\n+  margin-top: 20px;\n+}\n+\n+.letter-button {\n+  padding: 10px;\n+  font-size: 18px;\n+  cursor: pointer;\n+  background-color: #f0f0f0;\n+  border: none;\n+  border-radius: 5px;\n+}\n+\n+.error-button {\n+  background-color: #ff4d4d;\n+  color: white;\n+}\n+\n+.reset-button {\n+  background-color: #4caf50;\n+  color: white;\n+}\n"
+                },
+                {
+                    "date": 1771494878168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,43 @@\n+body {\n+  font-family: Arial, sans-serif;\n+  margin: 0;\n+  padding: 20px;\n+}\n+\n+#root {\n+  max-width: 600px;\n+  margin: 0 auto;\n+}\n+\n+.hangman {\n+  text-align: center;\n+  margin-bottom: 20px;\n+}\n+\n+.letters-container {\n+  display: grid;\n+  grid-template-columns: repeat(7, 1fr);\n+  gap: 10px;\n+  margin-top: 20px;\n+}\n+\n+.letter-button {\n+  padding: 10px;\n+  font-size: 18px;\n+  min-width: 100px;\n+  min-height: 50px;\n+  cursor: pointer;\n+  background-color: #f0f0f0;\n+  border: none;\n+  border-radius: 5px;\n+}\n+\n+.error-button {\n+  background-color: #ff4d4d;\n+  color: white;\n+}\n+\n+.reset-button {\n+  background-color: #4caf50;\n+  color: white;\n+}\n"
+                },
+                {
+                    "date": 1771494884694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n .letter-button {\n   padding: 10px;\n   font-size: 18px;\n-  min-width: 100px;\n+  min-width: 500px;\n   min-height: 50px;\n   cursor: pointer;\n   background-color: #f0f0f0;\n   border: none;\n@@ -40,88 +40,4 @@\n .reset-button {\n   background-color: #4caf50;\n   color: white;\n }\n-body {\n-  font-family: Arial, sans-serif;\n-  margin: 0;\n-  padding: 20px;\n-}\n-\n-#root {\n-  max-width: 600px;\n-  margin: 0 auto;\n-}\n-\n-.hangman {\n-  text-align: center;\n-  margin-bottom: 20px;\n-}\n-\n-.letters-container {\n-  display: grid;\n-  grid-template-columns: repeat(7, 1fr);\n-  gap: 10px;\n-  margin-top: 20px;\n-}\n-\n-.letter-button {\n-  padding: 10px;\n-  font-size: 18px;\n-  cursor: pointer;\n-  background-color: #f0f0f0;\n-  border: none;\n-  border-radius: 5px;\n-}\n-\n-.error-button {\n-  background-color: #ff4d4d;\n-  color: white;\n-}\n-\n-.reset-button {\n-  background-color: #4caf50;\n-  color: white;\n-}\n-body {\n-  font-family: Arial, sans-serif;\n-  margin: 0;\n-  padding: 20px;\n-}\n-\n-#root {\n-  max-width: 600px;\n-  margin: 0 auto;\n-}\n-\n-.hangman {\n-  text-align: center;\n-  margin-bottom: 20px;\n-}\n-\n-.letters-container {\n-  display: grid;\n-  grid-template-columns: repeat(7, 1fr);\n-  gap: 10px;\n-  margin-top: 20px;\n-}\n-\n-.letter-button {\n-  padding: 10px;\n-  font-size: 18px;\n-  min-width: 50px;\n-  min-height: 50px;\n-  cursor: pointer;\n-  background-color: #f0f0f0;\n-  border: none;\n-  border-radius: 5px;\n-}\n-\n-.error-button {\n-  background-color: #ff4d4d;\n-  color: white;\n-}\n-\n-.reset-button {\n-  background-color: #4caf50;\n-  color: white;\n-}\n"
+                },
+                {
+                    "date": 1771494894988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n \n .letter-button {\n   padding: 10px;\n   font-size: 18px;\n-  min-width: 500px;\n-  min-height: 50px;\n+  min-width: 50px;\n+  min-height: 80px;\n   cursor: pointer;\n   background-color: #f0f0f0;\n   border: none;\n   border-radius: 5px;\n"
+                },
+                {
+                    "date": 1771495308006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,14 @@\n   text-align: center;\n   margin-bottom: 20px;\n }\n \n+.answer-container {\n+  display: flex;\n+  justify-content: center;\n+  gap: 10px;\n+}\n+\n .letters-container {\n   display: grid;\n   grid-template-columns: repeat(7, 1fr);\n   gap: 10px;\n"
+                },
+                {
+                    "date": 1771495340986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,7 +43,7 @@\n   color: white;\n }\n \n .reset-button {\n-  background-color: #4caf50;\n+  background-color: #757575;\n   color: white;\n }\n"
+                },
+                {
+                    "date": 1771499301312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,13 @@\n   border: none;\n   border-radius: 5px;\n }\n \n+.letter-button:disabled {\n+  background-color: #d0d0d0;\n+  cursor: not-allowed;\n+}\n+\n .error-button {\n   background-color: #ff4d4d;\n   color: white;\n }\n"
+                },
+                {
+                    "date": 1771511299580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,13 @@\n   background-color: #d0d0d0;\n   cursor: not-allowed;\n }\n \n+.letter-guessed {\n+  background-color: #4caf50;\n+  color: white;\n+}\n+\n .error-button {\n   background-color: #ff4d4d;\n   color: white;\n }\n"
+                },
+                {
+                    "date": 1771543310816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,4 +56,47 @@\n .reset-button {\n   background-color: #757575;\n   color: white;\n }\n+\n+/* Удалите или закомментируйте старое правило:\n+.letters-container {\n+  display: grid;\n+  grid-template-columns: repeat(7, 1fr);\n+  gap: 10px;\n+  margin-top: 20px;\n+}\n+*/\n+\n+/* Новые стили */\n+.keyboard {\n+  display: flex;\n+  flex-direction: column;\n+  align-items: center;\n+  gap: 10px;\n+  margin-top: 20px;\n+}\n+\n+.keyboard-row {\n+  display: flex;\n+  justify-content: center;\n+  gap: 8px;\n+}\n+\n+/* Можно немного уменьшить минимальную ширину кнопок, чтобы они лучше помещались */\n+.letter-button {\n+  min-width: 44px; /* было 50px – можно подобрать под свой макет */\n+  min-height: 60px; /* было 80px – тоже уменьшим для компактности */\n+  padding: 8px;\n+  font-size: 18px;\n+  cursor: pointer;\n+  background-color: #f0f0f0;\n+  border: none;\n+  border-radius: 5px;\n+}\n+\n+.reset-button {\n+  background-color: #757575;\n+  color: white;\n+  margin-top: 10px; /* добавим отступ сверху */\n+  min-width: 100px; /* сделаем кнопку Reset чуть шире */\n+}\n"
+                },
+                {
+                    "date": 1771543339972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,15 +19,8 @@\n   justify-content: center;\n   gap: 10px;\n }\n \n-.letters-container {\n-  display: grid;\n-  grid-template-columns: repeat(7, 1fr);\n-  gap: 10px;\n-  margin-top: 20px;\n-}\n-\n .letter-button {\n   padding: 10px;\n   font-size: 18px;\n   min-width: 50px;\n"
+                },
+                {
+                    "date": 1771543363877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,13 +35,8 @@\n   background-color: #d0d0d0;\n   cursor: not-allowed;\n }\n \n-.letter-guessed {\n-  background-color: #4caf50;\n-  color: white;\n-}\n-\n .error-button {\n   background-color: #ff4d4d;\n   color: white;\n }\n@@ -86,8 +81,13 @@\n   border: none;\n   border-radius: 5px;\n }\n \n+.letter-guessed {\n+  background-color: #4caf50;\n+  color: white;\n+}\n+\n .reset-button {\n   background-color: #757575;\n   color: white;\n   margin-top: 10px; /* добавим отступ сверху */\n"
+                },
+                {
+                    "date": 1771543399217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,20 +18,23 @@\n   display: flex;\n   justify-content: center;\n   gap: 10px;\n }\n-\n .letter-button {\n-  padding: 10px;\n+  min-width: 44px; /* было 50px – можно подобрать под свой макет */\n+  min-height: 60px; /* было 80px – тоже уменьшим для компактности */\n+  padding: 8px;\n   font-size: 18px;\n-  min-width: 50px;\n-  min-height: 80px;\n   cursor: pointer;\n   background-color: #f0f0f0;\n   border: none;\n   border-radius: 5px;\n }\n \n+.letter-guessed {\n+  background-color: #4caf50;\n+  color: white;\n+}\n .letter-button:disabled {\n   background-color: #d0d0d0;\n   cursor: not-allowed;\n }\n@@ -70,24 +73,9 @@\n   gap: 8px;\n }\n \n /* Можно немного уменьшить минимальную ширину кнопок, чтобы они лучше помещались */\n-.letter-button {\n-  min-width: 44px; /* было 50px – можно подобрать под свой макет */\n-  min-height: 60px; /* было 80px – тоже уменьшим для компактности */\n-  padding: 8px;\n-  font-size: 18px;\n-  cursor: pointer;\n-  background-color: #f0f0f0;\n-  border: none;\n-  border-radius: 5px;\n-}\n \n-.letter-guessed {\n-  background-color: #4caf50;\n-  color: white;\n-}\n-\n .reset-button {\n   background-color: #757575;\n   color: white;\n   margin-top: 10px; /* добавим отступ сверху */\n"
+                },
+                {
+                    "date": 1771543407223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n   justify-content: center;\n   gap: 10px;\n }\n .letter-button {\n-  min-width: 44px; /* было 50px – можно подобрать под свой макет */\n-  min-height: 60px; /* было 80px – тоже уменьшим для компактности */\n+  min-width: 44px;\n+  min-height: 60px;\n   padding: 8px;\n   font-size: 18px;\n   cursor: pointer;\n   background-color: #f0f0f0;\n"
+                },
+                {
+                    "date": 1771543418562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,17 +29,18 @@\n   border: none;\n   border-radius: 5px;\n }\n \n-.letter-guessed {\n-  background-color: #4caf50;\n-  color: white;\n-}\n .letter-button:disabled {\n   background-color: #d0d0d0;\n   cursor: not-allowed;\n }\n \n+.letter-guessed {\n+  background-color: #4caf50;\n+  color: white;\n+}\n+\n .error-button {\n   background-color: #ff4d4d;\n   color: white;\n }\n"
+                },
+                {
+                    "date": 1771543426760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,10 @@\n \n .reset-button {\n   background-color: #757575;\n   color: white;\n+  margin-top: 10px; /* добавим отступ сверху */\n+  min-width: 100px; /* сделаем кнопку Reset чуть шире */\n }\n \n /* Удалите или закомментируйте старое правило:\n .letters-container {\n@@ -74,11 +76,4 @@\n   gap: 8px;\n }\n \n /* Можно немного уменьшить минимальную ширину кнопок, чтобы они лучше помещались */\n-\n-.reset-button {\n-  background-color: #757575;\n-  color: white;\n-  margin-top: 10px; /* добавим отступ сверху */\n-  min-width: 100px; /* сделаем кнопку Reset чуть шире */\n-}\n"
+                },
+                {
+                    "date": 1771543434668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,21 +47,12 @@\n \n .reset-button {\n   background-color: #757575;\n   color: white;\n-  margin-top: 10px; /* добавим отступ сверху */\n-  min-width: 100px; /* сделаем кнопку Reset чуть шире */\n+  margin-top: 10px;\n+  min-width: 100px;\n }\n \n-/* Удалите или закомментируйте старое правило:\n-.letters-container {\n-  display: grid;\n-  grid-template-columns: repeat(7, 1fr);\n-  gap: 10px;\n-  margin-top: 20px;\n-}\n-*/\n-\n /* Новые стили */\n .keyboard {\n   display: flex;\n   flex-direction: column;\n"
+                },
+                {
+                    "date": 1771543441418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,8 @@\n   margin-top: 10px;\n   min-width: 100px;\n }\n \n-/* Новые стили */\n .keyboard {\n   display: flex;\n   flex-direction: column;\n   align-items: center;\n@@ -65,6 +64,4 @@\n   display: flex;\n   justify-content: center;\n   gap: 8px;\n }\n-\n-/* Можно немного уменьшить минимальную ширину кнопок, чтобы они лучше помещались */\n"
+                },
+                {
+                    "date": 1771543452843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n   display: flex;\n   justify-content: center;\n   gap: 10px;\n }\n+\n .letter-button {\n   min-width: 44px;\n   min-height: 60px;\n   padding: 8px;\n"
+                },
+                {
+                    "date": 1771543746120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,18 +51,4 @@\n   color: white;\n   margin-top: 10px;\n   min-width: 100px;\n }\n-\n-.keyboard {\n-  display: flex;\n-  flex-direction: column;\n-  align-items: center;\n-  gap: 10px;\n-  margin-top: 20px;\n-}\n-\n-.keyboard-row {\n-  display: flex;\n-  justify-content: center;\n-  gap: 8px;\n-}\n"
+                },
+                {
+                    "date": 1771543752004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,22 @@\n   justify-content: center;\n   gap: 10px;\n }\n \n+.keyboard {\n+  display: flex;\n+  flex-direction: column;\n+  align-items: center;\n+  gap: 10px;\n+  margin-top: 20px;\n+}\n+\n+.keyboard-row {\n+  display: flex;\n+  justify-content: center;\n+  gap: 8px;\n+}\n+\n .letter-button {\n   min-width: 44px;\n   min-height: 60px;\n   padding: 8px;\n"
+                },
+                {
+                    "date": 1771543762381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,13 +54,8 @@\n   background-color: #4caf50;\n   color: white;\n }\n \n-.error-button {\n-  background-color: #ff4d4d;\n-  color: white;\n-}\n-\n .reset-button {\n   background-color: #757575;\n   color: white;\n   margin-top: 10px;\n"
+                },
+                {
+                    "date": 1771543919912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,22 @@\n+/* Базовые стили (общие) */\n body {\n   font-family: Arial, sans-serif;\n   margin: 0;\n   padding: 20px;\n+  box-sizing: border-box;\n }\n \n+*,\n+*::before,\n+*::after {\n+  box-sizing: inherit;\n+}\n+\n #root {\n   max-width: 600px;\n   margin: 0 auto;\n+  width: 100%;\n }\n \n .hangman {\n   text-align: center;\n@@ -17,33 +26,40 @@\n .answer-container {\n   display: flex;\n   justify-content: center;\n   gap: 10px;\n+  flex-wrap: wrap; /* для очень длинных слов */\n }\n \n+/* Клавиатура */\n .keyboard {\n   display: flex;\n   flex-direction: column;\n   align-items: center;\n   gap: 10px;\n   margin-top: 20px;\n+  width: 100%;\n+  max-width: 600px;\n }\n \n .keyboard-row {\n   display: flex;\n   justify-content: center;\n   gap: 8px;\n+  width: 100%;\n }\n \n+/* Кнопки букв – гибкие, подстраиваются под ширину экрана */\n .letter-button {\n-  min-width: 44px;\n-  min-height: 60px;\n-  padding: 8px;\n-  font-size: 18px;\n+  flex: 1 0 auto; /* равномерное распределение места */\n+  padding: 10px 5px;\n+  font-size: clamp(14px, 4vw, 18px); /* плавное изменение размера */\n   cursor: pointer;\n   background-color: #f0f0f0;\n   border: none;\n   border-radius: 5px;\n+  text-align: center;\n+  min-width: 30px; /* предотвращает слишком узкие кнопки */\n }\n \n .letter-button:disabled {\n   background-color: #d0d0d0;\n@@ -54,10 +70,42 @@\n   background-color: #4caf50;\n   color: white;\n }\n \n+/* Кнопка сброса */\n .reset-button {\n   background-color: #757575;\n   color: white;\n   margin-top: 10px;\n   min-width: 100px;\n+  flex: none; /* не растягивается как буквы */\n+  padding: 10px 20px;\n+  font-size: clamp(14px, 4vw, 18px);\n }\n+\n+/* Адаптация для средних экранов (телефоны в портрете) */\n+@media (max-width: 480px) {\n+  .keyboard-row {\n+    gap: 5px;\n+  }\n+  .letter-button {\n+    padding: 8px 2px;\n+    font-size: 16px;\n+    min-width: 24px;\n+  }\n+  .reset-button {\n+    min-width: 80px;\n+    padding: 8px 16px;\n+  }\n+}\n+\n+/* Адаптация для очень узких экранов (до 320px) */\n+@media (max-width: 320px) {\n+  .keyboard-row {\n+    gap: 2px;\n+  }\n+  .letter-button {\n+    padding: 6px 1px;\n+    font-size: 14px;\n+    min-width: 20px;\n+  }\n+}\n"
+                },
+                {
+                    "date": 1771543983815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,13 @@\n-/* Базовые стили (общие) */\n body {\n   font-family: Arial, sans-serif;\n   margin: 0;\n   padding: 20px;\n-  box-sizing: border-box;\n }\n \n-*,\n-*::before,\n-*::after {\n-  box-sizing: inherit;\n-}\n-\n #root {\n   max-width: 600px;\n   margin: 0 auto;\n-  width: 100%;\n }\n \n .hangman {\n   text-align: center;\n@@ -26,40 +17,33 @@\n .answer-container {\n   display: flex;\n   justify-content: center;\n   gap: 10px;\n-  flex-wrap: wrap; /* для очень длинных слов */\n }\n \n-/* Клавиатура */\n .keyboard {\n   display: flex;\n   flex-direction: column;\n   align-items: center;\n   gap: 10px;\n   margin-top: 20px;\n-  width: 100%;\n-  max-width: 600px;\n }\n \n .keyboard-row {\n   display: flex;\n   justify-content: center;\n   gap: 8px;\n-  width: 100%;\n }\n \n-/* Кнопки букв – гибкие, подстраиваются под ширину экрана */\n .letter-button {\n-  flex: 1 0 auto; /* равномерное распределение места */\n-  padding: 10px 5px;\n-  font-size: clamp(14px, 4vw, 18px); /* плавное изменение размера */\n+  min-width: 44px;\n+  min-height: 60px;\n+  padding: 8px;\n+  font-size: 18px;\n   cursor: pointer;\n   background-color: #f0f0f0;\n   border: none;\n   border-radius: 5px;\n-  text-align: center;\n-  min-width: 30px; /* предотвращает слишком узкие кнопки */\n }\n \n .letter-button:disabled {\n   background-color: #d0d0d0;\n@@ -70,42 +54,10 @@\n   background-color: #4caf50;\n   color: white;\n }\n \n-/* Кнопка сброса */\n .reset-button {\n   background-color: #757575;\n   color: white;\n   margin-top: 10px;\n   min-width: 100px;\n-  flex: none; /* не растягивается как буквы */\n-  padding: 10px 20px;\n-  font-size: clamp(14px, 4vw, 18px);\n }\n-\n-/* Адаптация для средних экранов (телефоны в портрете) */\n-@media (max-width: 480px) {\n-  .keyboard-row {\n-    gap: 5px;\n-  }\n-  .letter-button {\n-    padding: 8px 2px;\n-    font-size: 16px;\n-    min-width: 24px;\n-  }\n-  .reset-button {\n-    min-width: 80px;\n-    padding: 8px 16px;\n-  }\n-}\n-\n-/* Адаптация для очень узких экранов (до 320px) */\n-@media (max-width: 320px) {\n-  .keyboard-row {\n-    gap: 2px;\n-  }\n-  .letter-button {\n-    padding: 6px 1px;\n-    font-size: 14px;\n-    min-width: 20px;\n-  }\n-}\n"
+                },
+                {
+                    "date": 1771546848218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,4 +60,12 @@\n   color: white;\n   margin-top: 10px;\n   min-width: 100px;\n }\n+\n+.letter-placeholder {\n+  width: 30px;\n+  height: 40px;\n+  border-bottom: 2px solid #000;\n+  text-align: center;\n+  font-size: 24px;\n+}\n"
+                },
+                {
+                    "date": 1771546858802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,8 @@\n \n .letter-placeholder {\n   width: 30px;\n   height: 40px;\n-  border-bottom: 2px solid #000;\n+  /* border-bottom: 2px solid #000; */\n   text-align: center;\n   font-size: 24px;\n }\n"
+                },
+                {
+                    "date": 1771546869533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,6 +66,6 @@\n   width: 30px;\n   height: 40px;\n   /* border-bottom: 2px solid #000; */\n   text-align: center;\n-  font-size: 24px;\n+  font-size: 1.5rem;\n }\n"
+                },
+                {
+                    "date": 1771546880663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,7 @@\n \n .letter-placeholder {\n   width: 30px;\n   height: 40px;\n-  /* border-bottom: 2px solid #000; */\n   text-align: center;\n   font-size: 1.5rem;\n }\n"
+                },
+                {
+                    "date": 1771546901642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,4 +67,8 @@\n   height: 40px;\n   text-align: center;\n   font-size: 1.5rem;\n }\n+\n+.letter-placeholder.visible {\n+  border-bottom: 2px solid #000;\n+}\n"
+                },
+                {
+                    "date": 1771546910808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,71 @@\n+body {\n+  font-family: Arial, sans-serif;\n+  margin: 0;\n+  padding: 20px;\n+}\n+\n+#root {\n+  max-width: 600px;\n+  margin: 0 auto;\n+}\n+\n+.hangman {\n+  text-align: center;\n+  margin-bottom: 20px;\n+}\n+\n+.answer-container {\n+  display: flex;\n+  justify-content: center;\n+  gap: 10px;\n+}\n+\n+.keyboard {\n+  display: flex;\n+  flex-direction: column;\n+  align-items: center;\n+  gap: 10px;\n+  margin-top: 20px;\n+}\n+\n+.keyboard-row {\n+  display: flex;\n+  justify-content: center;\n+  gap: 8px;\n+}\n+\n+.letter-button {\n+  min-width: 44px;\n+  min-height: 60px;\n+  padding: 8px;\n+  font-size: 18px;\n+  cursor: pointer;\n+  background-color: #f0f0f0;\n+  border: none;\n+  border-radius: 5px;\n+}\n+\n+.letter-button:disabled {\n+  background-color: #d0d0d0;\n+  cursor: not-allowed;\n+}\n+\n+.letter-guessed {\n+  background-color: #4caf50;\n+  color: white;\n+}\n+\n+.reset-button {\n+  background-color: #757575;\n+  color: white;\n+  margin-top: 10px;\n+  min-width: 100px;\n+}\n+\n+.letter-placeholder {\n+  width: 30px;\n+  height: 40px;\n+\n+  text-align: center;\n+  font-size: 1.5rem;\n+}\n"
+                },
+                {
+                    "date": 1771546932653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,82 +64,11 @@\n \n .letter-placeholder {\n   width: 30px;\n   height: 40px;\n-\n   text-align: center;\n   font-size: 1.5rem;\n }\n-body {\n-  font-family: Arial, sans-serif;\n-  margin: 0;\n-  padding: 20px;\n-}\n \n-#root {\n-  max-width: 600px;\n-  margin: 0 auto;\n+.letter-placeholder.game-over {\n+  color: red;\n }\n-\n-.hangman {\n-  text-align: center;\n-  margin-bottom: 20px;\n-}\n-\n-.answer-container {\n-  display: flex;\n-  justify-content: center;\n-  gap: 10px;\n-}\n-\n-.keyboard {\n-  display: flex;\n-  flex-direction: column;\n-  align-items: center;\n-  gap: 10px;\n-  margin-top: 20px;\n-}\n-\n-.keyboard-row {\n-  display: flex;\n-  justify-content: center;\n-  gap: 8px;\n-}\n-\n-.letter-button {\n-  min-width: 44px;\n-  min-height: 60px;\n-  padding: 8px;\n-  font-size: 18px;\n-  cursor: pointer;\n-  background-color: #f0f0f0;\n-  border: none;\n-  border-radius: 5px;\n-}\n-\n-.letter-button:disabled {\n-  background-color: #d0d0d0;\n-  cursor: not-allowed;\n-}\n-\n-.letter-guessed {\n-  background-color: #4caf50;\n-  color: white;\n-}\n-\n-.reset-button {\n-  background-color: #757575;\n-  color: white;\n-  margin-top: 10px;\n-  min-width: 100px;\n-}\n-\n-.letter-placeholder {\n-  width: 30px;\n-  height: 40px;\n-  text-align: center;\n-  font-size: 1.5rem;\n-}\n-\n-.letter-placeholder.visible {\n-  border-bottom: 2px solid #000;\n-}\n"
+                },
+                {
+                    "date": 1771546950342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,7 +68,11 @@\n   text-align: center;\n   font-size: 1.5rem;\n }\n \n-.letter-placeholder.game-over {\n+.game-over {\n   color: red;\n }\n+\n+.game-won {\n+  color: green;\n+}\n"
+                },
+                {
+                    "date": 1771547007422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,11 +68,11 @@\n   text-align: center;\n   font-size: 1.5rem;\n }\n \n-.game-over {\n+.letter-placeholder__game-over {\n   color: red;\n }\n \n-.game-won {\n+.letter-placeholder__game-won {\n   color: green;\n }\n"
+                },
+                {
+                    "date": 1771547026871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,8 +66,9 @@\n   width: 30px;\n   height: 40px;\n   text-align: center;\n   font-size: 1.5rem;\n+  color: black;\n }\n \n .letter-placeholder__game-over {\n   color: red;\n"
+                },
+                {
+                    "date": 1771547322063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n .answer-container {\n   display: flex;\n   justify-content: center;\n-  gap: 10px;\n+  gap: 5px;\n }\n \n .keyboard {\n   display: flex;\n"
+                },
+                {
+                    "date": 1771547331656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n .answer-container {\n   display: flex;\n   justify-content: center;\n-  gap: 5px;\n+  gap: 1px;\n }\n \n .keyboard {\n   display: flex;\n"
+                },
+                {
+                    "date": 1771547342997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n .answer-container {\n   display: flex;\n   justify-content: center;\n-  gap: 1px;\n+  gap: 5зч;\n }\n \n .keyboard {\n   display: flex;\n"
+                },
+                {
+                    "date": 1771549325071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n .answer-container {\n   display: flex;\n   justify-content: center;\n-  gap: 5зч;\n+  gap: 5px;\n }\n \n .keyboard {\n   display: flex;\n@@ -49,9 +49,9 @@\n   background-color: #d0d0d0;\n   cursor: not-allowed;\n }\n \n-.letter-guessed {\n+.letter-guessed:disabled {\n   background-color: #4caf50;\n   color: white;\n }\n \n"
+                },
+                {
+                    "date": 1771549334515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,10 +50,9 @@\n   cursor: not-allowed;\n }\n \n .letter-guessed:disabled {\n-  background-color: #4caf50;\n-  color: white;\n+  cursor: not-allowed;\n }\n \n .reset-button {\n   background-color: #757575;\n"
+                },
+                {
+                    "date": 1771549347463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n   cursor: not-allowed;\n }\n \n .letter-guessed:disabled {\n+  background-color: #a0a0a0;\n   cursor: not-allowed;\n }\n \n .reset-button {\n"
+                },
+                {
+                    "date": 1771549358006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,10 +50,10 @@\n   cursor: not-allowed;\n }\n \n .letter-guessed:disabled {\n-  background-color: #a0a0a0;\n-  cursor: not-allowed;\n+  background-color: #4caf50;\n+  color: white;\n }\n \n .reset-button {\n   background-color: #757575;\n"
+                },
+                {
+                    "date": 1771549380248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,13 +49,8 @@\n   background-color: #d0d0d0;\n   cursor: not-allowed;\n }\n \n-.letter-guessed:disabled {\n-  background-color: #4caf50;\n-  color: white;\n-}\n-\n .reset-button {\n   background-color: #757575;\n   color: white;\n   margin-top: 10px;\n"
+                },
+                {
+                    "date": 1771549465079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,13 @@\n   background-color: #d0d0d0;\n   cursor: not-allowed;\n }\n \n+.letter-guessed {\n+  background-color: #4caf50;\n+  color: white;\n+}\n+\n .reset-button {\n   background-color: #757575;\n   color: white;\n   margin-top: 10px;\n"
+                },
+                {
+                    "date": 1771549478251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,14 @@\n   background-color: #4caf50;\n   color: white;\n }\n \n+.letter-guessed:disabled {\n+  background-color: #4caf50;\n+  color: white;\n+  cursor: not-allowed;\n+}\n+\n .reset-button {\n   background-color: #757575;\n   color: white;\n   margin-top: 10px;\n"
+                },
+                {
+                    "date": 1771549495029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,13 +52,8 @@\n \n .letter-guessed {\n   background-color: #4caf50;\n   color: white;\n-}\n-\n-.letter-guessed:disabled {\n-  background-color: #4caf50;\n-  color: white;\n   cursor: not-allowed;\n }\n \n .reset-button {\n"
+                }
+            ],
+            "date": 1771493415143,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

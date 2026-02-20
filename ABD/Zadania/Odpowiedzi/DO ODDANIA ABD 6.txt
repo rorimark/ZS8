@@ -1,0 +1,100 @@
+1:
+SELECT c.name, c.region_id, r.name FROM nation.countries c 
+JOIN nation.regions r USING(region_id)
+WHERE r.name LIKE'%Europe%';
+
+2:
+SELECT c.name, c.national_day FROM nation.countries c 
+WHERE nation.c.national_day<'1970-01-01';
+
+3:
+SELECT c.name, c.national_day,
+CASE 
+    WHEN national_day IS NULL THEN 'BRAK DANYCH' 
+    WHEN national_day<'1600-01-01' THEN 'bardzo stary' 
+    WHEN national_day<'1800-01-01' THEN 'stary' 
+    WHEN national_day<'1900-01-01' THEN 'mniej stary' 
+    WHEN national_day<'1950-01-01' THEN 'trochę młody' 
+    WHEN national_day<'2000-01-01' THEN 'młody' 
+    ELSE'bardzo młody' 
+END AS age FROM nation.countries c;
+
+4:
+SELECT c.name, c.area FROM nation.countries c 
+WHERE c.area > (SELECT AVG(c.area) FROM nation.countries c);
+
+5:
+SELECT c.name AS nazwa, c.area AS powierzchnia, ct.name AS kontynent FROM nation.countries c 
+JOIN nation.regions r ON r.region_id =c .region_id 
+JOIN nation.continents ct ON r.continent_id = ct.continent_id 
+WHERE c.area > (SELECT AVG(c2.area) FROM nation.countries c2 
+                JOIN nation.regions r2 ON r2.region_id = c2.region_id 
+                WHERE r2.continent_id = r.continent_id);
+
+6:
+SELECT c.name FROM nation.countries c 
+WHERE NOT EXISTS(SELECT 1 FROM nation.country_languages cl 
+                 WHERE cl.country_id=c.country_id AND cl.official=1);
+    
+7:
+SELECT COUNT(*) AS liczba_krajów
+FROM (
+    SELECT cs.country_id
+    FROM nation.country_stats cs
+    GROUP BY cs.country_id
+    HAVING MIN(cs.population) > 10000000) t;
+
+8:
+SELECT COUNT(DISTINCT country_id)
+FROM nation.country_stats
+WHERE population > 10000000;
+
+9:
+SELECT c.name, cs.population
+FROM nation.countries c
+JOIN nation.country_stats cs USING(country_id)
+WHERE cs.year = 2003
+  AND cs.population <
+      (
+        SELECT AVG(population)
+        FROM nation.country_stats
+        WHERE year = 2003
+      );
+
+10:
+SELECT c.name
+FROM nation.countries c
+WHERE EXISTS (
+    SELECT 1
+    FROM nation.country_stats cs
+    WHERE cs.country_id = c.country_id
+      AND cs.year = 2003
+      AND cs.population <
+          (
+            SELECT AVG(population)
+            FROM nation.country_stats
+            WHERE year = 2003
+          )
+);
+
+11:
+SELECT COUNT(*)
+FROM (
+    SELECT region_id
+    FROM nation.countries
+    GROUP BY region_id
+    HAVING COUNT(*) >= 10
+) r;
+
+12:
+SELECT AVG(area) AS median_surface_area
+FROM (
+    SELECT area,
+           ROW_NUMBER() OVER (ORDER BY area) AS rn,
+           COUNT(*) OVER () AS cnt
+    FROM nation.countries
+) t
+WHERE rn IN (
+    FLOOR((cnt + 1) / 2),
+    CEIL((cnt + 1) / 2)
+);

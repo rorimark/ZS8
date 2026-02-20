@@ -1,0 +1,96 @@
+body{
+    background-image: url("tlo4.png");
+    background-attachment: fixed;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(23, 23, 239);
+}
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+#koszyk{
+    width: 5%;
+   
+}
+input, select {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(17, 17, 227);
+    font-size: 120%;
+}
+input[type="number"]{
+    width: 40px;
+}
+#listy{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 6vh;
+}
+fieldset{
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px grey;
+    width: 85%;
+    margin: auto;
+}
+#dzial1, #dzial2, #dzial3, #dzial4 {
+    border: 1px solid grey;
+    box-shadow: 10px 10px 10px grey;
+    overflow: auto;
+    width: 22%;
+    height: 45vh;
+}
+h3{
+    text-align: center;
+    text-shadow: 5px 5px 5px grey;
+    font-size: 160%;
+}
+li{
+    margin: 15px 2px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 8vh;
+    margin-top: 40px; 
+}
+
+@media print {
+  /* Ukrywamy wszystkie elementy na stronie */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Wyświetlamy tylko sekcję do druku oraz jej zawartość */
+  #listy, #listy * {
+    visibility: visible;
+  }
+
+  /* Pozycjonujemy sekcję na samej górze strony */
+  #listy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+ul {
+  list-style-type: none; /* Usuwamy domyślne kropki */
+  padding: 0;
+}
+
+li {
+  background-image: url("koszyk.png");
+  background-repeat: no-repeat;
+  background-size: 20px 20px; /* Tutaj ustawiasz dowolny rozmiar */
+  background-position: left center;
+  padding-left: 30px; /* Miejsce na obrazek, żeby tekst na niego nie nachodził */
+  display: flex;
+  align-items: center;
+  min-height: 25px;
+}
+h3{
+    font-size: 160%;
+}
