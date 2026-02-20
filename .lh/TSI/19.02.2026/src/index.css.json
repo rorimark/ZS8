@@ -1,0 +1,18 @@
+{
+    "sourceFile": "TSI/19.02.2026/src/index.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1771493412618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1771493412618,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

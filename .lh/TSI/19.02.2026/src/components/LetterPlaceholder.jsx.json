@@ -1,0 +1,38 @@
+{
+    "sourceFile": "TSI/19.02.2026/src/components/LetterPlaceholder.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1771495206944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771495216966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n const LetterPlaceholder = ({ letter, isVisible }) => {\n   return <span className=\"letter-placeholder\">{isVisible ? letter : \"_\"}</span>;\n };\n+\n+export { LetterPlaceholder };\n"
+                },
+                {
+                    "date": 1771495235369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const LetterPlaceholder = ({ letter, isVisible }) => {\n+const LetterPlaceholder = ({ letter, isVisible = false }) => {\n   return <span className=\"letter-placeholder\">{isVisible ? letter : \"_\"}</span>;\n };\n \n export { LetterPlaceholder };\n"
+                },
+                {
+                    "date": 1771546826240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,16 @@\n-const LetterPlaceholder = ({ letter, isVisible = false }) => {\n-  return <span className=\"letter-placeholder\">{isVisible ? letter : \"_\"}</span>;\n+const LetterPlaceholder = ({\n+  letter,\n+  isVisible = false,\n+  isGameOver = false,\n+  isGameWon = false,\n+}) => {\n+  return (\n+    <span\n+      className={`letter-placeholder ${isGameOver ? \"game-over\" : \"\"} ${isGameWon ? \"game-won\" : \"\"}`}\n+    >\n+      {isVisible ? letter : \"_\"}\n+    </span>\n+  );\n };\n \n export { LetterPlaceholder };\n"
+                },
+                {
+                    "date": 1771546991736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   isGameWon = false,\n }) => {\n   return (\n     <span\n-      className={`letter-placeholder ${isGameOver ? \"game-over\" : \"\"} ${isGameWon ? \"game-won\" : \"\"}`}\n+      className={`letter-placeholder ${isGameOver ? \"letter-placeholde__game-over\" : \"\"} ${isGameWon ? \"letter-placeholder__game-won\" : \"\"}`}\n     >\n       {isVisible ? letter : \"_\"}\n     </span>\n   );\n"
+                },
+                {
+                    "date": 1771547248869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,19 @@\n   isVisible = false,\n   isGameOver = false,\n   isGameWon = false,\n }) => {\n+  // Показываем букву в трёх случаях\n+  const showLetter = isGameOver || isGameWon || isVisible;\n+\n+  // Определяем класс цвета\n+  let colorClass = \"\";\n+  if (isGameOver) colorClass = \"letter-placeholder__game-over\";\n+  else if (isGameWon) colorClass = \"letter-placeholder__game-won\";\n+\n   return (\n-    <span\n-      className={`letter-placeholder ${isGameOver ? \"letter-placeholde__game-over\" : \"\"} ${isGameWon ? \"letter-placeholder__game-won\" : \"\"}`}\n-    >\n-      {isVisible ? letter : \"_\"}\n+    <span className={`letter-placeholder ${colorClass}`}>\n+      {showLetter ? letter : \"_\"}\n     </span>\n   );\n };\n \n"
+                }
+            ],
+            "date": 1771495206944,
+            "name": "Commit-0",
+            "content": "const LetterPlaceholder = ({ letter, isVisible }) => {\n  return <span className=\"letter-placeholder\">{isVisible ? letter : \"_\"}</span>;\n};\n"
+        }
+    ]
+}

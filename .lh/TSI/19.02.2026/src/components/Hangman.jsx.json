@@ -1,0 +1,38 @@
+{
+    "sourceFile": "TSI/19.02.2026/src/components/Hangman.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1771493560090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771493577435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,1 @@\n-const Hangman = ({ errorsCount }) => {\n-  return (\n-    <div className=\"hangman\">\n-      <div className=\"hangman__gallows\"></div>\n-      <div\n-        className={`hangman__head ${errorsCount > 0 ? \"visible\" : \"\"}`}\n-      ></div>\n-      <div\n-        className={`hangman__body ${errorsCount > 1 ? \"visible\" : \"\"}`}\n-      ></div>\n-      <div\n-        className={`hangman__left-arm ${errorsCount > 2 ? \"visible\" : \"\"}`}\n-      ></div>\n-      <div\n-        className={`hangman__right-arm ${errorsCount > 3 ? \"visible\" : \"\"}`}\n-      ></div>\n-      <div\n-        className={`hangman__left-leg ${errorsCount > 4 ? \"visible\" : \"\"}`}\n-      ></div>\n-      <div\n-        className={`hangman__right-leg ${errorsCount > 5 ? \"visible\" : \"\"}`}\n-      ></div>\n-    </div>\n-  );\n-};\n-\n-export default Hangman;\n+const Hangman = ({ errorsCount }) => {};\n"
+                },
+                {
+                    "date": 1771493607499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-const Hangman = ({ errorsCount }) => {};\n+import { use } from \"react\";\n+\n+const Hangman = ({ errorsCount }) => {\n+    return ();\n+};\n"
+                },
+                {
+                    "date": 1771493641629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-import { use } from \"react\";\n-\n-const Hangman = ({ errorsCount }) => {\n-    return ();\n+const Hangman = ({ images, errorsCount }) => {\n+  return (\n+    <div className=\"hangman\">\n+      <img src={images[errorsCount]} alt=\"Hangman\" />\n+    </div>\n+  );\n };\n"
+                },
+                {
+                    "date": 1771493656258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+const Hangman = ({ images, errorsCount }) => {\n+  return (\n+    <div className=\"hangman\">\n+      <img src={images[errorsCount]} alt=\"Hangman\" />\n+    </div>\n+  );\n+};\n+\n+export default Hangman;\n"
+                },
+                {
+                    "date": 1771493670744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,5 @@\n     </div>\n   );\n };\n \n-export default Hangman;\n-const Hangman = ({ images, errorsCount }) => {\n-  return (\n-    <div className=\"hangman\">\n-      <img src={images[errorsCount]} alt=\"Hangman\" />\n-    </div>\n-  );\n-};\n+export { Hangman };\n"
+                }
+            ],
+            "date": 1771493560090,
+            "name": "Commit-0",
+            "content": "const Hangman = ({ errorsCount }) => {\n  return (\n    <div className=\"hangman\">\n      <div className=\"hangman__gallows\"></div>\n      <div\n        className={`hangman__head ${errorsCount > 0 ? \"visible\" : \"\"}`}\n      ></div>\n      <div\n        className={`hangman__body ${errorsCount > 1 ? \"visible\" : \"\"}`}\n      ></div>\n      <div\n        className={`hangman__left-arm ${errorsCount > 2 ? \"visible\" : \"\"}`}\n      ></div>\n      <div\n        className={`hangman__right-arm ${errorsCount > 3 ? \"visible\" : \"\"}`}\n      ></div>\n      <div\n        className={`hangman__left-leg ${errorsCount > 4 ? \"visible\" : \"\"}`}\n      ></div>\n      <div\n        className={`hangman__right-leg ${errorsCount > 5 ? \"visible\" : \"\"}`}\n      ></div>\n    </div>\n  );\n};\n\nexport default Hangman;\n"
+        }
+    ]
+}

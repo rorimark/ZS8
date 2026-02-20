@@ -1,0 +1,22 @@
+{
+    "sourceFile": "TSI/19.02.2026/public/words.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1771547784634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771547824776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,5 +102,5 @@\n   \"sleep\",\n   \"dream\",\n ];\n \n-export default words;\n+export words;\n"
+                }
+            ],
+            "date": 1771547784634,
+            "name": "Commit-0",
+            "content": "// words.js\nconst words = [\n  \"apple\",\n  \"bird\",\n  \"car\",\n  \"dog\",\n  \"cat\",\n  \"house\",\n  \"tree\",\n  \"book\",\n  \"phone\",\n  \"computer\",\n  \"sun\",\n  \"moon\",\n  \"star\",\n  \"flower\",\n  \"grass\",\n  \"water\",\n  \"fire\",\n  \"earth\",\n  \"wind\",\n  \"cloud\",\n  \"rain\",\n  \"snow\",\n  \"ice\",\n  \"mountain\",\n  \"river\",\n  \"ocean\",\n  \"beach\",\n  \"sand\",\n  \"rock\",\n  \"stone\",\n  \"metal\",\n  \"wood\",\n  \"paper\",\n  \"pen\",\n  \"pencil\",\n  \"chair\",\n  \"table\",\n  \"door\",\n  \"window\",\n  \"wall\",\n  \"floor\",\n  \"roof\",\n  \"bed\",\n  \"pillow\",\n  \"blanket\",\n  \"lamp\",\n  \"light\",\n  \"dark\",\n  \"night\",\n  \"day\",\n  \"morning\",\n  \"evening\",\n  \"afternoon\",\n  \"time\",\n  \"clock\",\n  \"watch\",\n  \"shoe\",\n  \"sock\",\n  \"shirt\",\n  \"pants\",\n  \"hat\",\n  \"coat\",\n  \"glove\",\n  \"scarf\",\n  \"bag\",\n  \"ball\",\n  \"toy\",\n  \"game\",\n  \"fun\",\n  \"happy\",\n  \"sad\",\n  \"angry\",\n  \"calm\",\n  \"fast\",\n  \"slow\",\n  \"big\",\n  \"small\",\n  \"hot\",\n  \"cold\",\n  \"warm\",\n  \"cool\",\n  \"new\",\n  \"old\",\n  \"young\",\n  \"tall\",\n  \"short\",\n  \"long\",\n  \"wide\",\n  \"thin\",\n  \"thick\",\n  \"soft\",\n  \"hard\",\n  \"sweet\",\n  \"sour\",\n  \"bitter\",\n  \"salty\",\n  \"delicious\",\n  \"hungry\",\n  \"thirsty\",\n  \"sleep\",\n  \"dream\",\n];\n\nexport default words;\n"
+        }
+    ]
+}
