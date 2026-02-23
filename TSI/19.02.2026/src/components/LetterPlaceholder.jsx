@@ -6,7 +6,6 @@ const LetterPlaceholder = ({
 }) => {
   const showLetter = isGameOver || isGameWon || isVisible;
 
-  // Определяем класс цвета
   let colorClass = "";
   if (isGameOver) colorClass = "letter-placeholder__game-over";
   else if (isGameWon) colorClass = "letter-placeholder__game-won";

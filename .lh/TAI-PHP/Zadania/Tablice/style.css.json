@@ -1,0 +1,30 @@
+{
+    "sourceFile": "TAI-PHP/Zadania/Tablice/style.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1771837183492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771837190544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+table {\n+    border-collapse: collapse;\n+    margin: 20px 0;\n+}\n+\n+td {\n+    border: 1px solid #000;\n+    padding: 5px;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771837260785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n   border-collapse: collapse;\n   margin: 20px 0;\n }\n \n-td {\n+th, td {\n   border: 1px solid #000;\n   padding: 5px;\n }\n"
+                },
+                {
+                    "date": 1771838409988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,9 @@\n td {\n   border: 1px solid #000;\n   padding: 5px;\n }\n+\n+.table {\n+    display: flex;\n+    flex-direction: row;\n+}\n"
+                }
+            ],
+            "date": 1771837183492,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

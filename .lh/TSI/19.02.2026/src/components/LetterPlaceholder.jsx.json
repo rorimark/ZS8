@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1771495206944,
@@ -28,6 +28,10 @@
                 {
                     "date": 1771547248869,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,19 @@\n   isVisible = false,\n   isGameOver = false,\n   isGameWon = false,\n }) => {\n+  // Показываем букву в трёх случаях\n+  const showLetter = isGameOver || isGameWon || isVisible;\n+\n+  // Определяем класс цвета\n+  let colorClass = \"\";\n+  if (isGameOver) colorClass = \"letter-placeholder__game-over\";\n+  else if (isGameWon) colorClass = \"letter-placeholder__game-won\";\n+\n   return (\n-    <span\n-      className={`letter-placeholder ${isGameOver ? \"letter-placeholde__game-over\" : \"\"} ${isGameWon ? \"letter-placeholder__game-won\" : \"\"}`}\n-    >\n-      {isVisible ? letter : \"_\"}\n+    <span className={`letter-placeholder ${colorClass}`}>\n+      {showLetter ? letter : \"_\"}\n     </span>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1771579483147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,10 @@\n   isVisible = false,\n   isGameOver = false,\n   isGameWon = false,\n }) => {\n-  // Показываем букву в трёх случаях\n   const showLetter = isGameOver || isGameWon || isVisible;\n \n-  // Определяем класс цвета\n   let colorClass = \"\";\n   if (isGameOver) colorClass = \"letter-placeholder__game-over\";\n   else if (isGameWon) colorClass = \"letter-placeholder__game-won\";\n \n"
                 }
             ],
             "date": 1771495206944,
