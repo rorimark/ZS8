@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Tablice - zadania</title>
 </head>
+
 <body>
     <?php 
 
+    // Funkcje pomocnicze
     function czyPierwsza($n) {
         if ($n < 2) return false;
         if ($n == 2) return true;
         if ($n % 2 == 0) return false;
-
         for ($i = 3; $i <= sqrt($n); $i += 2) {
-            if ($n % $i == 0) {
-                return false;
-            }
+            if ($n % $i == 0) return false;
         }
-
-    return true;
+        return true;
     }
 
     function nwd($a, $b) {
@@ -31,341 +30,290 @@
         }
         return $a;
     }
-    
+
+    // Stałe dla zadania 4
+    define('MIN_RAND', 100);
+    define('MAX_RAND', 999);
+
     echo "<h1>Tablice - zadania</h1>";
 
+    // ZADANIE 1
     function zadanie1() {
-        echo"<br/><br/>";
-        echo"<b>Zadanie 1</b><br/>";
-
+        echo "<br/><br/><b>Zadanie 1</b><br/>";
         $tab1 = array("Tablica 1");
         $tab2 = ["Tablica 2"];
         $tab3[0] = "Tablica 3";
-
         var_dump($tab1);
         var_dump($tab2);
         var_dump($tab3);
-
-        echo"<br/>";
-
-        foreach( $tab1 as $v ) {
-            echo $v . "<br>";
-        }
-        foreach( $tab2 as $v ) {
-            echo $v . "<br>";
-        }
-        foreach( $tab3 as $v ) {
-            echo $v . "<br>";
-        }
+        echo "<br/>";
+        foreach( $tab1 as $v ) echo $v . "<br>";
+        foreach( $tab2 as $v ) echo $v . "<br>";
+        foreach( $tab3 as $v ) echo $v . "<br>";
     }
-    zadanie1();
 
+    // ZADANIE 2
     function zadanie2() {
-        echo"<br/><br/>";
-        echo"<b>Zadanie 2</b><br/>";
-
+        echo "<br/><br/><b>Zadanie 2</b><br/>";
         $napis = "programuję w języku PHP";
         $tab = explode(" ", $napis);
-
         var_dump($tab);
-        echo"<br/>";
-        
-        echo"<br/>";
-        echo"<b>Tablica od początku do końca:</b><br/>";
-        foreach($tab as $v){
-            echo $v . "<br>";
-        };
-
-        echo"<br/>";
-        echo"<b>Tablica od końca do początku:</b><br/>";
-        for($i = count($tab) - 1; $i >= 0; $i--) {
-            echo $tab[$i] . "<br>";
-        }
-
+        echo "<br/><br/><b>Tablica od początku do końca:</b><br/>";
+        foreach($tab as $v) echo $v . "<br>";
+        echo "<br/><b>Tablica od końca do początku:</b><br/>";
+        for($i = count($tab) - 1; $i >= 0; $i--) echo $tab[$i] . "<br>";
     }
-    zadanie2();
 
+    // ZADANIE 3
+    function zadanie3() {
+        echo "<br/><br/><b>Zadanie 3</b><br/>";
+        echo "Największa liczba do wylosowania: " . MAX_RAND . "<br>";
+    }
 
-
+    // ZADANIE 4
     function zadanie4() {
-        echo"<br/><br/>";
-        echo"<b>Zadanie 4</b><br/>";
-
-        $min_rand = 100;
-        $max_rand = 999;
-
+        echo "<br/><br/><b>Zadanie 4</b><br/>";
         $tab = [];
         for($i = 0; $i < 10; $i++) {
-            $tab[] = rand($min_rand, $max_rand);
+            $tab[] = rand(MIN_RAND, MAX_RAND);
         }
-
         var_dump($tab);
-        echo"<br/>";
-
-        foreach($tab as $v) {
-            echo $v . "<br>";
-        }
-
+        echo "<br/>";
+        foreach($tab as $v) echo $v . "<br>";
         echo "<br/>";
 
-        $min = 0;
-        $max = 0;
-
-        $i = 0;
-        $min = $tab[$i];
-        $max = $tab[$i];
-            
+        $min = $tab[0];
+        $max = $tab[0];
         foreach($tab as $v) {
-            if($v < $min) {
-                $min = $v;
-            }
-            if($v > $max) {
-                $max = $v;
-            }
+            if($v < $min) $min = $v;
+            if($v > $max) $max = $v;
         }
+        $avg = array_sum($tab) / count($tab);
 
-        $avg = 0;
-                foreach($tab as $v) {
-            $avg += $v;
-        }
-        $avg = $avg / count($tab);
-        
         echo "Minimalna wartość: " . $min . "<br>";
         echo "Maksymalna wartość: " . $max . "<br>";
         echo "Średnia wartość: " . $avg . "<br>";
 
-        
-
-        return ["max_rand" => $max_rand, "tablica" => $tab, "min" => $min, "max" => $max, "avg" => $avg];
+        return ["max_rand" => MAX_RAND, "tablica" => $tab, "min" => $min, "max" => $max, "avg" => $avg];
     }
-    $res = zadanie4();
 
-        function zadanie3() {
-        global $res;
-        $max_rand = $res["max_rand"];
-        echo"<br/><br/>";
-        echo"<b>Zadanie 3</b><br/>";
-        echo "Największa liczba do wylosowania: " .  $max_rand . "<br>";
-    }
-    zadanie3();
-   
-
+    // ZADANIE 5
     function zadanie5($tab) {
-        echo"<br/><br/>";
-        echo"<b>Zadanie 5</b><br/>";
-        
+        echo "<br/><br/><b>Zadanie 5</b><br/>";
         echo "<b>Liczby pierwsze:</b><br/>";
-
         $found = false;
-
         foreach ($tab as $v) {
             if (czyPierwsza($v)) {
                 echo $v . "<br>";
                 $found = true;
             }
         }
-
-        if (!$found) {
-            echo "Brak liczb pierwszych w tablicy.<br>";
-        }
+        if (!$found) echo "Brak liczb pierwszych w tablicy.<br>";
     }
 
-    zadanie5($res["tablica"]);
-
+    // ZADANIE 6
     function zadanie6($data) {
-        echo"<br/><br/>";
-        echo"<b>Zadanie 6</b><br/>";
-
+        echo "<br/><br/><b>Zadanie 6</b><br/>";
         $min = $data["min"];
         $max = $data["max"];
-
         $wynik = nwd($min, $max);
-
         echo "Min: $min <br>";
         echo "Max: $max <br>";
         echo "NWD(min, max): $wynik <br>";
     }
 
-    zadanie6($res);
-
+    // ZADANIE 7
     function zadanie7() {
-        echo"<br/><br/>";
-        echo"<b>Zadanie 7</b><br/>";
-
+        echo "<br/><br/><b>Zadanie 7</b><br/>";
         $min = 10;
         $max = 99;
-    
-        $wiersz1 = [];
-        for($i = 0; $i < 5; $i++) {
-            $wiersz1[$i] = "<td>".rand($min, $max)."</td>";
-        };
-
-        $wiersz2 = [];
-        for($i = 0; $i < 5; $i++) {
-            $wiersz2[$i] = "<td>".rand($min, $max)."</td>";
-        };
-
-        $wiersz3 = [];
-        for($i = 0; $i < 5; $i++) {
-            $wiersz3[$i] = "<td>".rand($min, $max)."</td>";
-        };
-
-        $wiersz4 = []; 
-        for($i = 0; $i < 5; $i++) {
-            $wiersz4[$i] = "<td>".rand($min, $max)."</td>";
-        };  
-
-        $wiersz5 = [];
-        for($i = 0; $i < 5; $i++) { 
-            $wiersz5[$i] = "<td>".rand($min, $max)."</td>";
-        };
-
-
-
+        $dane = [];
+        for ($i = 1; $i <= 5; $i++) {
+            $wiersz = [];
+            for ($j = 0; $j < 5; $j++) {
+                $wiersz[] = "<td>" . rand($min, $max) . "</td>";
+            }
+            $dane["wiersz$i"] = $wiersz;
+        }
         echo "<table>";
         echo "<tr><th></th><th>Kolumna 1</th><th>Kolumna 2</th><th>Kolumna 3</th><th>Kolumna 4</th><th>Kolumna 5</th></tr>";
-        echo "<tr>";
-            echo "<td>Wiersz 1</td>";
-            foreach($wiersz1 as $td) {
-                echo $td;
-            }
-        echo "</tr>";
-        echo "<tr>";
-            echo "<td>Wiersz 2</td>";
-            foreach($wiersz2 as $td) {
-                echo $td;
-            }
-        echo "</tr>";
-        echo "<tr>";
-            echo "<td>Wiersz 3</td>";
-            foreach($wiersz3 as $td) {
-                echo $td;
-            }
-        echo "</tr>";
-        echo "<tr>";
-            echo "<td>Wiersz 4</td>";
-            foreach($wiersz4 as $td) {
-                echo $td;
-            }
-        echo "</tr>";
-        echo "<tr>";
-            echo "<td>Wiersz 5</td>";
-            foreach($wiersz5 as $td) {
-                echo $td;
-            }
-        echo "</tr>";
+        for ($i = 1; $i <= 5; $i++) {
+            echo "<tr>";
+            echo "<th>Wiersz $i</th>";
+            foreach ($dane["wiersz$i"] as $td) echo $td;
+            echo "</tr>";
+        }
         echo "</table>";
-
-        return ["wiersz1" => $wiersz1, "wiersz2" => $wiersz2, "wiersz3" => $wiersz3, "wiersz4" => $wiersz4];
+        return $dane;
     }
 
+    // ZADANIE 8
     function zadanie8(){
-        echo"<br/><br/>";
-        echo"<b>Zadanie 8</b><br/>";
-
+        echo "<br/><br/><b>Zadanie 8</b><br/>";
         global $zad7;
-        // Do tabeli z poprzedniego zadania:
-        // a) Podaj ile razy w tabeli pojawiła się liczba odpowiadająca Twojemu wiekowi
-        // b) Podaj wiersz, w którym znajduje się wartość najmniejsza oraz tą wartość
-        // c) Podaj kolumnę, w której znajduje się wartość największa oraz tą wartość
-        // d) Podaj wiersz, w którym średnia liczb jest największa
-        // e) Podaj średnią liczb w tabeli
-        // f) Podaj ile razy w tabeli pojawiła się liczba większa od średniej
-        // g) Podaj kolumnę, w której znajduje się najwięcej liczb parzystych (lub informację, że w tabeli w ogóle nie ma liczb parzystych)
-        // Odpowiedzi do podpunktów umieść w liście punktowanej, gdzie każdemu punktowi listy odpowiada właściwy podpunkt zadania.
-        // Listę umieść w panelu prawym obok wyświetlonej tabeli.Autor: Małogrzata Tokarek
+        $age = 19;
+        $age_count = 0;
+        $min_value = null;
+        $min_row = null;
+        $max_value = null;
+        $max_col = null;
+        $total_sum = 0;
+        $total_count = 0;
+        $even_counts = [0, 0, 0, 0, 0];
+        $row_sums = [];
 
-        $wiek_qty = 0; // a
-        $min_value = 0; //b
-        $min_value_row = 0; //b
-        $max_value = 0; //c
-        $max_value_col = 0; //c
-        $max_avg_row = 0; //d
-        $avg_value = 0; //e
-        $greater_than_avg_qty = 0; //f
-        $max_even_qty = 0; //g
+        foreach($zad7 as $row_key => $row_data) {
+            $row_sum = 0;
+            $col_index = 1;
+            foreach($row_data as $col => $cell) {
+                $num = strip_tags($cell);
+                if ($num == $age) $age_count++;
+                if ($min_value === null || $num < $min_value) {
+                    $min_value = $num;
+                    $min_row = $row_key;
+                }
+                if ($num > $max_value) {
+                    $max_value = $num;
+                    $max_col = $col_index;
+                }
+                if ($num % 2 == 0) $even_counts[$col]++;
+                $row_sum += $num;
+                $total_sum += $num;
+                $total_count++;
+                $col_index++;
+            }
+            $row_sums[$row_key] = $row_sum;
+        }
 
-        $td_qty = 0;
-        $full_value = 0;
+        $avg_total = $total_sum / $total_count;
 
-        $max_avg = 0; //d
+        $max_avg_row = null;
+        $max_avg_value = 0;
+        foreach ($row_sums as $row_key => $row_sum) {
+            $row_avg = $row_sum / 5;
+            if ($row_avg > $max_avg_value) {
+                $max_avg_value = $row_avg;
+                $max_avg_row = $row_key;
+            }
+        }
 
-        $greater_than_avg = 0;
+        $greater_than_avg_count = 0;
+        foreach($zad7 as $row_data) {
+            foreach($row_data as $cell) {
+                $num = strip_tags($cell);
+                if ($num > $avg_total) $greater_than_avg_count++;
+            }
+        }
 
-    foreach($zad7 as $td_key => $td_value) {
-        $row_avg_helper = 0;
+        $max_even = max($even_counts);
+        if ($max_even == 0) {
+            $max_even_info = "W tabeli nie ma liczb parzystych";
+        } else {
+            $max_even_col = array_search($max_even, $even_counts) + 1;
+            $max_even_info = "Kolumna $max_even_col (liczba parzystych: $max_even)";
+        }
+
+        echo "<ul>";
+            echo "<li>Liczba wystąpień wieku $age w tabeli: $age_count</li>";
+            echo "<li>Wartość minimalna: $min_value (w wierszu $min_row)</li>";
+            echo "<li>Wartość maksymalna: $max_value (w kolumnie $max_col)</li>";
+            echo "<li>Największa średnia wartość znajduje się w wierszu: $max_avg_row (wynosi - $max_avg_value)</li>";
+            echo "<li>Średnia liczb w tabeli: $avg_total</li>";
+            echo "<li>Ilość liczb większych od średniej: $greater_than_avg_count</li>";
+            echo "<li>Kolumna w której znajduje się najwięcej liczb parzystych: $max_even_info</li>";
+        echo "</ul>";
+    }
+
+    function zadanie10(){
+        echo "<br/><br/><b>Zadanie 10</b><br/>";
+
+        $arr_sum = 0;
+        $arr_avg = 0;
+        $arr_min = 0;
+        $arr_max = 0;
+
+        $arr = [];
+        $arr_length = 0;
         
-        $col = 1;
-        foreach($td_value as $v) {
-            $num = strip_tags($v);
-            if ($num == 19) { // a
-                $wiek_qty++;
-            }
-
-            if ($min_value == 0 || $num < $min_value) { // b
-                $min_value = $num;
-                $min_value_row = "$td_key";
-            }
-
-            if ($num > $max_value) { // c
-                $max_value = $num;
-                $max_value_col = $col;
-            }
-
-            $row_avg_helper += $num;
-
-
-            $col++;
-
-            $td_qty++;
-            $full_value += $num; // e
-
+        for ($i = 0; $i < 10; $i++) {
+          $arr[$i] = rand(10,99);
+        }
+        
+        foreach($arr as $value) {
+            $arr_sum += $value; 
+            $arr_length++;
+            if ($arr_min == 0 || $value < $arr_min) $arr_min = $value;
+            if ($arr_max == 0 || $value > $arr_max) $arr_max = $value;
         }
 
-        $row_avg_helper = $row_avg_helper / 5;
-        if ($row_avg_helper > $max_avg) { 
-            $max_avg = $row_avg_helper;
-            $max_avg_row = $td_key;
-        }
-    }
-
-    $avg_value = $full_value / $td_qty; // e
-
-    foreach($zad7 as $td_key => $td_value) {
-        foreach($td_value as $v) {
-            $num = strip_tags($v);
-            if ($num > $avg_value){
-                $greater_than_avg_qty++; // f
-            }
-          }
-    }
-
-
-    echo "<ul>";
-        echo "<li>Liczba wystąpień wieku 19 w tabeli: $wiek_qty</li>";
-        echo "<li>Wartość minimalna: $min_value (w wierszu $min_value_row)</li>";
-        echo "<li>Wartość maksymalna: $max_value (w kolumnie $max_value_col)</li>";
-        echo "<li>Największa średnia wartość znajduje się w wierszu: $max_avg_row (wynosi - $max_avg)</li>";
-        echo "<li>Średnia liczb w tabeli: $avg_value</li>";
-        echo "<li>Ilość liczb większych od średniej: $greater_than_avg_qty</li>";
-        echo "<li>Kolumna w której znajduje się najwięcej liczb parzystych: $max_even_qty</li>";
-    echo "</ul>";
-
-    }
-
-    echo "<div class=table>";
-        echo "<div>";
-            $zad7 = zadanie7();
-        echo "</div>";
-        echo "<div>";
-            zadanie8();
-        echo "</div>";
-    echo "</div>";
-
-
+        $arr_avg = $arr_sum / $arr_length;
     
+        var_dump($arr);
+        echo "</br> Suma wylosowanych liczb: ". $arr_sum;
+        echo " </br> Średnia wylosowanych liczb: ". $arr_avg;
+        echo "</br> Najmniejsza z wylosowanych liczb: ". $arr_min;
+        echo " </br> Największa z wylosowanych liczb: ". $arr_max;
+
+    }
+
+    function zadanie11(){
+        echo "<br/><br/><b>Zadanie 11</b><br/>";
+
+        $names = ["Mark", "Ola", "Marcin", "Ela", "Piotr"];
+
+        echo "Imiona: <br/>";
+        $i = 1;
+        foreach($names as $name) {
+            echo "$i: ". $name ."<br/>";
+            $i++;
+            if($i == count($names)+1) {
+                $i=1;
+            }
+        }
+        
+        echo "<br/>Imiona wielkimi: <br/>";
+        foreach($names as $name) {
+            echo "$i: ". strtoupper($name) ."<br/>";
+            $i++;
+            if($i == count($names)+1) {
+                $i=1;
+            }
+        }
+        
+        echo "<br/>Imiona małymi: <br/>";
+        foreach($names as $name) {
+            echo "$i: ". strtolower($name) ."<br/>";
+            $i++;
+            if($i == count($names)+1) {
+                $i=1;
+            }
+        }
+    }
+
+    // WYWOŁANIA ZADAŃ
+    zadanie1();
+    zadanie2();
+    zadanie3();
+    $res = zadanie4();
+    zadanie5($res["tablica"]);
+    zadanie6($res);
     ?>
 
-        
+    <div class="table">
+        <div>
+            <?php $zad7 = zadanie7(); ?>
+        </div>
+        <div>
+            <?php zadanie8(); ?>
+        </div>
+    </div>
+
+    <?php 
+        zadanie10(); 
+        zadanie11(); 
+
+    ?>
+
 </body>
+
 </html>
