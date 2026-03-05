@@ -1,4 +1,4 @@
-const LetterPlaceholder = ({
+export const LetterPlaceholder = ({
   letter,
   isVisible = false,
   isGameOver = false,
@@ -16,5 +16,3 @@ const LetterPlaceholder = ({
     </span>
   );
 };
-
-export { LetterPlaceholder };

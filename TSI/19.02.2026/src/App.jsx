@@ -1,4 +1,5 @@
 import "./App.css";
+
 import Hangman0 from "./assets/Hangman-0.png";
 import Hangman1 from "./assets/Hangman-1.png";
 import Hangman2 from "./assets/Hangman-2.png";
@@ -6,6 +7,7 @@ import Hangman3 from "./assets/Hangman-3.png";
 import Hangman4 from "./assets/Hangman-4.png";
 import Hangman5 from "./assets/Hangman-5.png";
 import Hangman6 from "./assets/Hangman-6.png";
+
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Hangman } from "./components/Hangman";
 import { LetterPlaceholder } from "./components/LetterPlaceholder";
