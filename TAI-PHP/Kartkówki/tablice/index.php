@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,6 @@
     }
     </style>
 </head>
-
 <body>
     <?php
 // Zadanie 1 - wpełnić tablicę $zadania 10 wylosowanymi liczbami 3 cyfrowymi i wyświetlić w postaci tabeli
@@ -33,7 +31,7 @@ foreach ($zadania as $wartość) {
 echo "</tr>";
 echo "</table>";
 
-// Wypisać min i max z tablicy $zadania
+// Zadanie 2 -Wypisać min i max z tablicy $zadania
 $tab_min = $zadania[0];
 $tab_max = $zadania[0];
 foreach ($zadania as $wartość) {
@@ -47,7 +45,7 @@ foreach ($zadania as $wartość) {
 echo "Wartość minimalna - $tab_min </br>";
 echo "Wartość maksymalna - $tab_max </br>";
 
-// Stworzyć tablice asocjacyjną ZA POMOCĄ PĘTLI wypełnion kluczami z $klucze i wartościami z $zadania i wypisać j za pomocą funkcji słuącej do wyświetlania informacji o zmiennej
+// Zadanie 3 - Stworzyć tablice asocjacyjną ZA POMOCĄ PĘTLI wypełnion kluczami z $klucze i wartościami z $zadania i wypisać j za pomocą funkcji słuącej do wyświetlania informacji o zmiennej
 $klucze = array("jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć", "dziesięć");
 
 $asocjacyjna = [];
@@ -58,5 +56,4 @@ for( $i = 0; $i < 10; $i++) {
 var_dump($asocjacyjna);
 ?>
 </body>
-
 </html>
