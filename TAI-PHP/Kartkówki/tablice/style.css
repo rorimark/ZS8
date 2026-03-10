@@ -1,0 +1,52 @@
+body{
+    background-image: url("tloN.jpg");
+    font-size: larger;
+}
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top:0;
+}
+main{
+    height: 90vh;
+    overflow: auto;
+}
+.zadanie{
+    height: 150px;
+    width: 94%;
+    margin: auto;
+    padding: 2%;
+    border: 1px dotted gray;
+}
+.tresc{
+    display: flex;
+    justify-content: space-between;
+}
+.odp{
+    display: flex;
+}
+.naglowek{
+    width: 15%;
+    height: 60px;
+    display: flex;
+    align-items:flex-start;
+}
+.polecenie{
+    width: 85%;
+
+}
+h2{
+    margin-bottom: 30px;
+}
+td{
+    border: 1px solid black;
+    padding: 7px;
+}
+table,td{
+    border-collapse: collapse;
+    margin-left: 40px;
+
+}
