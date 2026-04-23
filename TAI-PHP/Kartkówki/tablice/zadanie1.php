@@ -7,7 +7,7 @@ for($i = 0; $i<10; $i++){
 echo "<table>";
 echo "<tr>";
 foreach($zadania as $v){
-echo "<td>$v</td>";
+    echo "<td>$v</td>";
 }
 echo "</tr>";
 echo "</table>";
